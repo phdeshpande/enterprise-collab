@@ -1,0 +1,8 @@
+# Application Settings for different LIVE/STAGING/DEV/TESTING environments goes here!
+# This config/app_config.yml file is expected to be hijacked and used by the developers.
+# and Symbolic linked in the LIVE SERVER
+
+# To use it locally for testing purposes set local_server to false
+environment:
+  local_server: true
+  enable_caching: true

@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-EnterpriseCollab::Application.config.secret_key_base = '885ddef967e10aed31e5a98455bd2af3df62d44d5e080a87175a214bb2ec0a426d63a6b9d5bbbc7e2a0b63e2d9a4cc84ca47a682ea20051fe0cae5b532ef4e9c'
+EnterpriseCollab::Application.config.secret_key_base = '093ebc7d5148491f4287fe84042e55bc5561347322e444dfe57618c1e40cf91ddaa926032e43c5dd3fa88c5186abdab1b4b2015877c93cc4dcda57b24cbd7e82'
