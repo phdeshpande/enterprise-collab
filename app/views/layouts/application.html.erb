@@ -1,12 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
 <head>
   <title>EnterpriseCollab</title>
+  <meta content="" name="description">
+  <meta content="" name="author">
+  <meta content="True" name="HandheldFriendly">
+  <meta content="320" name="MobileOptimized">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body id="login" class="animated fadeInDown">
+  <!-- Loading Indicator -->
+  <div class="pace  pace-inactive"><div class="pace-progress" style="width: 100%;" data-progress-text="100%" data-progress="99">
+    <div class="pace-progress-inner"></div>
+  </div>
+  <div class="pace-activity"></div></div>  
+  <!-- ENDs Loading Indicator -->
+
+  <!-- HEADER -->
+  <header id="header">
+      <!--<span id="logo"></span>-->
+
+    <div id="logo-group">
+      <span id="logo"> <img alt="SmartAdmin" src="img/logo.png"> </span>
+
+      <!-- END AJAX-DROPDOWN -->
+    </div>
+
+    <span id="login-header-space"> <h4 class="hidden-mobile">Need an account?</h4> <a class="btn btn-danger" href="register.html">Create account</a> </span>
+
+  </header> 
+  <!-- ENDs HEADER -->
+  
+
+
 
 <%= yield %>
 
