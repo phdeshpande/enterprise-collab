@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    Dear <%= @user.name%>,
+<pre>Welcome to EnterpriseCollab!
+With EnterpriseCollab, we make sure you get empowered with most important aspects of Collaborative Project Management. 
+
+You are one step away from being empowered, Activate your account now,
+<strong>http://localhost:3000/account/activate/<%= @activation_key %></strong>
+
+*Features:*
+<ul>
+<li> Know who is doing what and since when </li>
+<li> Monitor more than project statuses </li>
+<li> Daily Summary reporting on Standups, Critical Events and Reminders </li>
+<li> Integrated Chat System and much more...</li>
+</ul>
+</pre>
+<EnterpriseCollab Logo> and copyright messages should be shown in the Footer of the email
+  </body>
+</html>
