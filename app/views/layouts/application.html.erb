@@ -11,33 +11,17 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body id="login" class="animated fadeInDown">
-  <!-- Loading Indicator -->
-  <div class="pace  pace-inactive"><div class="pace-progress" style="width: 100%;" data-progress-text="100%" data-progress="99">
-    <div class="pace-progress-inner"></div>
-  </div>
-  <div class="pace-activity"></div></div>  
-  <!-- ENDs Loading Indicator -->
-
-  <!-- HEADER -->
-  <header id="header">
-      <!--<span id="logo"></span>-->
-
-    <div id="logo-group">
-      <span id="logo"> <img alt="SmartAdmin" src="img/logo.png"> </span>
-
-      <!-- END AJAX-DROPDOWN -->
-    </div>
-
-    <span id="login-header-space"> <h4 class="hidden-mobile">Need an account?</h4> <a class="btn btn-danger" href="register.html">Create account</a> </span>
-
-  </header> 
-  <!-- ENDs HEADER -->
+<body class="">
   
+  <header id="header">
+  <%= render "common/admin/header" %>
+  </header>
 
+ 
 
-
+<div id="main" role="main">  
 <%= yield %>
+</div>
 
 </body>
 </html>
