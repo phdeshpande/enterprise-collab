@@ -4,6 +4,6 @@ class UserMailer < ActionMailer::Base
   def welcome_email(user)
     @user = user
     @url  = 'http://example.com/login'
-    mail(to: @user.email, subject: 'Activate your Account')
+    mail(to: @user.email, subject: 'Welcome to EnterpriseCollab - Activate & Get Empowered')
   end
 end

@@ -1,0 +1,97 @@
+<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 hidden-xs hidden-sm">
+          <h1 class="txt-color-red login-header-big">New User</h1>
+          <div class="hero">
+
+              <div class="pull-left login-desc-box-l">
+                <h4 class="paragraph-header">It's Okay to be Smart. Experience the simplicity of SmartAdmin, everywhere you go!</h4>
+                <div class="login-app-icons">
+                  <a class="btn btn-danger btn-sm" href="javascript:void(0);">Frontend Template</a>
+                  <a class="btn btn-danger btn-sm" href="javascript:void(0);">Find out more</a>
+                </div>
+              </div>
+              <div class="pull-right display-image">
+              <%= image_tag('smartadmin/iphoneview.png', :width =>'210' ) %>
+              </div>
+              
+
+          </div>
+          <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <h5 class="about-heading">About SmartAdmin - Are you up to date?</h5>
+                <p>
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.
+                </p>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <h5 class="about-heading">Not just your average template!</h5>
+                <p>
+                  Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi voluptatem accusantium!
+                </p>
+              </div>
+
+          </div>
+        </div>
+
+<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+            <div class="well no-padding">
+
+                <p><h3>
+                  Registration is FREE*
+                </h3></p>
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username %><br>
+  </div>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %><br>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :confirmpassword %><br>
+    <%= f.password_field :confirmpassword %>
+  </div>
+  <div class="field">
+    <%= f.label :firstname %><br>
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    <%= f.label :lastname %><br>
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.select :gender, options_for_select([["Male","Male"],["Female","Female"],["Not to specify","Not to specify"]]) %>
+  </div>
+  <div class="field">
+    <%= f.label :request %><br>
+    <%= f.text_field :request %><br>
+  </div>
+  <div class="field">
+    <%= f.label :subscription %>
+    <%= f.check_box :subscription %><br>
+  </div>
+  <div class="field">
+    <%= f.label :terms %>
+    <%= f.check_box :terms %><br>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

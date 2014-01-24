@@ -1,0 +1,29 @@
+<%= form_for(@account) do |f| %>
+  <% if @account.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@account.errors.count, "error") %> prohibited this account from being saved:</h2>
+
+      <ul>
+      <% @account.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+            <div class="well no-padding">
+
+                <header>
+                  Activate  your Account
+              <br>
+                </header>
+<div class="field">
+    <%= f.label :Userid %><br>
+    <%= f.text_field :userid %>
+  </div>
+
+ <span id="login-header-space">  <a class="btn btn-danger" href="s/new"> Activate</a> </span>
+  
+  <% end %>
+
