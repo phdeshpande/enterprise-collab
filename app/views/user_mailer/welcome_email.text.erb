@@ -1,9 +1,9 @@
-Dear <%= @user.name %>,
+Dear <%= @user.firstname %>,
 Welcome to EnterpriseCollab!
 With EnterpriseCollab, we make sure you get empowered with most important aspects of Collaborative Project Management. 
 
 You are one step away from being empowered, Activate your account now,
-http://localhost:3000/account/activate/2sdfsdf343242343
+http://localhost:3000/account/activate/<%=@user.activation_key%>
 
 *Features:*
 # Know who is doing what and since when

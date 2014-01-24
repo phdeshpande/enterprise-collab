@@ -1,12 +1,19 @@
 EnterpriseCollab::Application.routes.draw do
-  #get "/register" => 'home#register'
+
+  #get "/register" => 'users#new'
+
   resources :dashboard
+  resources :home
+  resources :users
+  resources :accounts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
-  
+
+  root :to => 'home#index'
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
