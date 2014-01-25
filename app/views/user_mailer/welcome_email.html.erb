@@ -1,24 +1,89 @@
+
+<!--welcome_email template-->
 <!DOCTYPE html>
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    
+    <link rel="stylesheet" media="all" href="/assets/bootstrap.css?body=1" data-turbolinks-track="true"></link>
+  <style type="text/css">
+     body, td { color:black; font-size:14px; font-family:Times New Roman,Helvetica,Arial; }
+     .jumbotron {
+  padding: 50px;
+  margin-bottom: 50px;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 2.1428571435;
+  font-color: black;
+  background-color: #F2D9D9;
+}
+
+.jumbotron h1,
+.jumbotron .h1 {
+  line-height: 1;
+  
+}
+
+.jumbotron p {
+  line-height: 2;
+}
+
+.container .jumbotron {
+  border-radius: 25px;
+}
+
+.jumbotron .container {
+  max-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .jumbotron {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  .container .jumbotron {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+  .jumbotron h1,
+  .jumbotron .h1 {
+    font-size: 63px;
+  }
+}
+</style>
+
   </head>
+   <div class="container">
+  <div class="jumbotron">
+ 
   <body>
-    Dear <%= @user.name%>,
-<pre>Welcome to EnterpriseCollab!
-With EnterpriseCollab, we make sure you get empowered with most important aspects of Collaborative Project Management. 
+    <p><h2>Dear <%= @user.firstname.capitalize%></h2>,<p>
+<h3><p>Welcome to EnterpriseCollab!</p></h3>
+<p></p>
+</p>With EnterpriseCollab, we make sure you get empowered with most important aspects of Collaborative Project Management. </p>
 
-You are one step away from being empowered, Activate your account now,
-<strong>http://localhost:3000/account/activate/<%= @activation_key %></strong>
+<p>You are one step away from being empowered, Activate your account now,
+<a href="http://localhost:3000/account/activate/<%= @user.activation_key %>"><p color:blue>Activate Now</p></a></p>
 
-*Features:*
+<p><h3>Features:</h3>
 <ul>
 <li> Know who is doing what and since when </li>
 <li> Monitor more than project statuses </li>
 <li> Daily Summary reporting on Standups, Critical Events and Reminders </li>
 <li> Integrated Chat System and much more...</li>
 </ul>
-</pre>
-<EnterpriseCollab Logo> and copyright messages should be shown in the Footer of the email
+</p>
+<br/>
+<br/>
+<p>----------------------------------------------------------------------------------------------------------------------------------------</p>
+<footer>
+<center>
+<img src="http://localhost:3000/smartadmin/logo.png" alt="smartadmin"/> 
+ <p>2014 EnterpriseCollab All rights reserved</p>
+  </center>
+</footer>
   </body>
+   </div>
+</div>
+ 
 </html>
