@@ -1,10 +1,11 @@
 EnterpriseCollab::Application.routes.draw do
 
+  devise_for :users
   #get "/register" => 'users#new'
 
   resources :dashboard
   resources :home
-  resources :users
+  
   resources :accounts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
