@@ -1,4 +1,50 @@
 <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
+  <div class="well no-padding">
+
+    <%= form_for(resource, :as => resource_name, :html => {:class => "smart-form client-form", :novalidate=>"novalidate"}, :url => session_path(resource_name)) do |f| %>
+      <header>Sign In</header>
+     <fieldset>
+       <section>
+       <%= f.label :email, :class => "label" %>
+        <label class="input"><i class="icon-append fa fa-user"></i>
+          <%= f.email_field :email, :autofocus => true %>
+        <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Please enter email address</b></label>
+      </section>
+
+      <section>
+        <%= f.label :password, :class => "label" %>
+        <label class="input"> <i class="icon-append fa fa-lock"></i>
+          <%= f.password_field :password %>
+          <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Enter your password</b> </label>
+        <div class="note">
+          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+          <% end -%>
+        </div>
+      </section>
+
+      <% if devise_mapping.rememberable? -%>
+        <section>
+          <label class="checkbox">
+            <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+            <i></i>Stay signed in</label>
+        </section>
+      
+      </fieldset>
+      <% end -%>
+
+      <footer>
+        <%= f.submit "Sign in", :class => "btn btn-primary" %>
+      </footer>
+
+    <% end %>
+  </div>
+</div>
+
+
+
+<% if false %>
+<div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
             <div class="well no-padding">
               <form class="smart-form client-form" id="login-form" action="index.html" novalidate="novalidate">
                 <header>
@@ -55,3 +101,5 @@
                     </ul>
             
           </div>  
+
+<% end %>

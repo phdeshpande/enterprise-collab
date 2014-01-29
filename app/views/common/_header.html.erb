@@ -1,9 +1,12 @@
-      <!--<span id="logo"></span>-->
+<div id="logo-group">
+  <span id="logo"><%= link_to image_tag("smartadmin/logo.png"), root_path %></span>
+</div>
 
-    <div id="logo-group">
-      <span id="logo"> <%= image_tag("smartadmin/logo.png")%></span>
+<%= render "common/flash_messages", :locals => {flash => flash } %>
 
-      <!-- END AJAX-DROPDOWN -->
-    </div>
-
-    <span id="login-header-space"> <h4 class="hidden-mobile">Need an account?</h4> <a class="btn btn-danger" href="/register">Create account</a> </span>
+<span id="login-header-space"> 
+<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  <h4 class="hidden-mobile">Need an account?</h4> 
+  <%= link_to "Create account", new_registration_path(resource_name), :class=>"btn btn-danger" %>
+</span>
+<% end -%>
