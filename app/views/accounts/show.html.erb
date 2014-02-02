@@ -48,7 +48,13 @@
 <p>
   <strong>Status:</strong>
   <%= @account.status %>
-</p>
+  
+<br/>
+<p> <%= link_to 'Update Account', edit_account_path(@account) %> </p>
+        
+<br/>
+    <p><%= link_to 'Create New Account', new_account_path %></p>
 
-<%= link_to 'Edit', edit_account_path(@account) %> |
-<%= link_to 'Back', accounts_path %>
+<br/>
+  <p><%= link_to 'Display Dashboard', dashboard_path %> </p>
+   

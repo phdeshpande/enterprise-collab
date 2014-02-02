@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140124125443) do
+ActiveRecord::Schema.define(version: 20140201171529) do
 
   create_table "accounts", force: true do |t|
     t.string   "company"
     t.string   "subdomain"
-    t.string   "address"
+    t.text     "address"
     t.string   "city"
     t.string   "state"
     t.string   "zipcode"
@@ -29,17 +29,19 @@ ActiveRecord::Schema.define(version: 20140124125443) do
   end
 
   create_table "users", force: true do |t|
-    t.string "username"
-    t.string "email"
-    t.string "password"
-    t.string "confirmpassword"
-    t.string "firstname"
-    t.string "lastname"
-    t.string "gender"
-    t.date   "request"
-    t.string "subscription"
-    t.string "terms"
-    t.string "activation_key"
+    t.string   "username"
+    t.string   "email"
+    t.string   "password"
+    t.string   "confirmpassword"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "gender"
+    t.string   "request"
+    t.string   "subscription"
+    t.string   "terms"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "activation_key"
   end
 
 end

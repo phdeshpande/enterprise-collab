@@ -1,10 +1,6 @@
 class AccountsController < ApplicationController
   layout 'public'
-  before_action :set_account, only: [:show, :edit, :update, :destroy]
-
-  def index
-    @accounts = Account.all
-  end
+  before_action :set_account, only: [:show, :edit, :update]
 
   def show
   end
@@ -41,15 +37,6 @@ class AccountsController < ApplicationController
         format.html { render action: 'edit' }
        
       end
-    end
-  end
-
-  
-  def destroy
-    @account.destroy
-    respond_to do |format|
-      format.html { redirect_to accounts_url }
-      
     end
   end
 
