@@ -1,5 +1,5 @@
-<h2>Sign up</h2>
-
+<%= render :template => "home/register" %>
+<% if false %>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
@@ -12,7 +12,12 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
+  <div>
+    <%= label_tag :company_name %><br />
+    <%= text_field :account, :company_name %>
+  </div>
+
   <div><%= f.submit "Sign up" %></div>
 <% end %>
-
+<% end %>
 <%= render "devise/shared/links" %>

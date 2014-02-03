@@ -1,0 +1,17 @@
+<!-- PLACE YOUR LOGO HERE -->
+<div id="logo-group">
+  <span id="logo"><%= link_to image_tag("smartadmin/logo.png"), root_path %></span>
+</div>
+<!-- END LOGO PLACEHOLDER -->
+<%= render "common/admin/notifications" %>
+
+<%= render "common/admin/projects" %>
+<!-- end projects dropdown -->
+
+<!-- pulled right: nav area -->
+<div class="pull-right">
+ <%= render "common/admin/nav" %> 
+</div>
+<!-- end pulled right: nav area -->
+
+<%= render "common/flash_messages", :locals => {flash => flash } %>
