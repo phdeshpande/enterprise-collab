@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
   layout 'public'
-  before_action :set_user, only: [:show]
+  layout 'default'
 
+  before_action :set_user, only: [:show]
+  before_filter :save_login_state, :only => [:new, :create]
+  
   def show
   end
 
@@ -19,7 +22,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
          UserMailer.welcome_email(@user).deliver!
-        format.html { redirect_to @user }
+        format.html { render action: 'show' }
       else
         format.html { render action: 'new' }        
       end
@@ -33,7 +36,7 @@ class UsersController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:user).permit(:username, :email, :password, :confirmpassword, :firstname, :lastname, :gender, :request, :subscription, :terms)
+   def user_params
+      params.require(:user).permit(:username, :email, :password, :firstname, :lastname, :gender, :request, :subscription, :terms)
     end
 end

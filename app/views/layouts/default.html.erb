@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>EnterpriseCollab</title>
+  <meta content="" name="description">
+  <meta content="" name="author">
+  <meta content="True" name="HandheldFriendly">
+  <meta content="320" name="MobileOptimized">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+  <%= stylesheet_link_tag    "public", media: "all", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="login" class="animated fadeInDown">
+  <!-- Loading Indicator -->
+  <div class="pace  pace-inactive"><div class="pace-progress" style="width: 100%;" data-progress-text="100%" data-progress="99">
+    <div class="pace-progress-inner"></div>
+  </div>
+  <div class="pace-activity"></div></div>  
+  <!-- ENDs Loading Indicator -->
+
+  <!-- HEADER -->
+  <header id="header">
+   <%= render "common/reg_header" %>
+  </header> 
+
+  <!-- ENDs HEADER -->
+  <div id="main" role="main">
+    <div id="content" class="container">
+      <div class="row">
+        <%= yield %>        
+      </div> <!-- END Row -->
+    </div>
+  </div>

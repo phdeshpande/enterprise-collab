@@ -1,7 +1,11 @@
 EnterpriseCollab::Application.routes.draw do
 
-  #get "/register" => 'users#new'
-
+  get "/register" => 'users#new'
+  get "/register" => 'users#new'
+  get "signup", :to => "users#new"
+  get "login", :to => "home#index"
+  get "logout", :to => "home#logout"
+  post '/home/loginattempt'=> 'home#loginattempt'
   resources :dashboard
   resources :home
   resources :users
@@ -11,6 +15,7 @@ EnterpriseCollab::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root :to => 'home#index'
+  get '/activate' => 'accounts#show'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
