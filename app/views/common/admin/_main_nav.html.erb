@@ -1,0 +1,42 @@
+<aside id="left-panel">
+  <div class="login-info" style="">
+    <span>
+      <!-- User image size is adjusted inside CSS, it should stay as it --> 
+      <%= image_tag "smartadmin/avatars/sunny.png", :class=>"online" %>
+      <a id="show-shortcut" href="javascript:void(0);"><%= current_user.first_name + " " +current_user.last_name %> <i class="fa fa-angle-down"></i></a>
+    </span>
+  </div>
+  <nav>
+    <ul>
+      <li class="active">
+        <%= link_to '<i class="fa fa-lg fa-fw fa-home"></i>  <span class="menu-item-parent">Dashboard</span>'.html_safe, dashboard_index_path  %>
+      </li>
+      <li>
+        <%= link_to '<i class="fa fa-lg fa-fw fa-desktop"></i>  <span class="menu-item-parent">Spaces</span>'.html_safe, ""  %>
+      </li>
+      <li>
+        <%= link_to '<i class="fa fa-lg fa-fw fa-list-alt"></i>  <span class="menu-item-parent">Departments</span>'.html_safe, ""  %>
+      </li>
+      <li>
+        <%= link_to '<i class="fa fa-lg fa-fw fa-table"></i>  <span class="menu-item-parent">Timeline</span>'.html_safe, ""  %>
+      </li>
+      <li>
+        <%= link_to '<i class="fa fa-lg fa-fw fa-home"></i>  <span class="menu-item-parent">Standup</span>'.html_safe, ""  %>
+      </li>
+      <li>
+        <%= link_to '<i class="fa fa-lg fa-fw fa-calendar"><em>3</em></i>  <span class="menu-item-parent">ToDos</span>'.html_safe, ""  %>
+      </li>
+      <li>
+        <%= link_to '<i class="fa fa-lg fa-fw fa-bar-chart-o"></i>  <span class="menu-item-parent">Reports</span>'.html_safe, ""  %>
+      </li>
+      <li>
+        <%= link_to '<i class="fa fa-lg fa-fw fa-windows"></i>  <span class="menu-item-parent">Utilities</span>'.html_safe, ""  %>
+      </li>
+    </ul>
+  </nav>
+
+  <span class="minifyme">
+    <i class="fa fa-arrow-circle-left hit"></i>
+  </span>
+
+</aside>

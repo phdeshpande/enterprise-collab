@@ -11,5 +11,10 @@ module ApplicationHelper
       %(#{html_tag}).html_safe
     end
   end
+
+  def page_title(title, action)
+    action = action == "index" ? "Home" : action
+    "#{title.camelize} <span>&gt; #{action} </span>".html_safe
+  end  
   
 end

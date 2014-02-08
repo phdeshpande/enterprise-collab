@@ -11,8 +11,5 @@
  *= require_self
  *= require smartadmin/bootstrap.min
  *= require smartadmin/font-awesome.min
- *= require smartadmin/demo
- *= require smartadmin/smartadmin-skins-dark-elegance
  *= require smartadmin/smartadmin-production
- * require_tree .
  */

@@ -13,4 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require smartadmin/libs/jquery-2.0.2.min.js
+//= require smartadmin/libs/jquery-ui-1.10.3.min.js
+//= require turbolinks
+//= require smartadmin/bootstrap/bootstrap.min
+//= require smartadmin/app.js
+//= require smartadmin/plugin/jquery-validate/jquery.validate.min.js
+//= require smartadmin/notification/SmartNotification.min
+//= require smartadmin/smartwidgets/jarvis.widget.min
+//= require smartadmin/demo
+//= require smartadmin/app
+//= require_tree ./smartadmin/plugin/
+// require_tree .

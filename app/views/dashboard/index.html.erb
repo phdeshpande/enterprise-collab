@@ -1,1 +1,460 @@
-<%= render :partial => "devise/shared/login_links" %>
+<% content_for :quick_snap do %>
+  <ul class="" id="sparks">
+    <li class="sparks-info">
+      <h5> My Income <span class="txt-color-blue">$47,171</span></h5>
+      <div class="sparkline txt-color-blue hidden-mobile hidden-md hidden-sm"><canvas style="display: inline-block; width: 89px; height: 26px; vertical-align: top;" width="89" height="26"></canvas></div>
+    </li>
+    <li class="sparks-info">
+      <h5> Site Traffic <span class="txt-color-purple"><i class="fa fa-arrow-circle-up"></i>&nbsp;45%</span></h5>
+      <div class="sparkline txt-color-purple hidden-mobile hidden-md hidden-sm"><canvas style="display: inline-block; width: 82px; height: 26px; vertical-align: top;" width="82" height="26"></canvas></div>
+    </li>
+    <li class="sparks-info">
+      <h5> Site Orders <span class="txt-color-greenDark"><i class="fa fa-shopping-cart"></i>&nbsp;2447</span></h5>
+      <div class="sparkline txt-color-greenDark hidden-mobile hidden-md hidden-sm"><canvas style="display: inline-block; width: 82px; height: 26px; vertical-align: top;" width="82" height="26"></canvas></div>
+    </li>
+  </ul>
+<% end %>
+
+<article class="col-sm-12 sortable-grid ui-sortable">
+  <div data-widget-deletebutton="false" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" id="wid-id-0" class="jarviswidget jarviswidget-sortable" style="" role="widget">
+        <!-- widget options:
+        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+        data-widget-colorbutton="false"
+        data-widget-editbutton="false"
+        data-widget-togglebutton="false"
+        data-widget-deletebutton="false"
+        data-widget-fullscreenbutton="false"
+        data-widget-custombutton="false"
+        data-widget-collapsed="true"
+        data-widget-sortable="false"
+
+        -->
+        <header role="heading">
+          <span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+          <h2>Live Feeds </h2>
+
+          <ul id="myTab" class="nav nav-tabs pull-right in">
+            <li class="active">
+              <a href="#s1" data-toggle="tab"><i class="fa fa-clock-o"></i> <span class="hidden-mobile hidden-tablet">Live Stats</span></a>
+            </li>
+
+            <li>
+              <a href="#s2" data-toggle="tab"><i class="fa fa-facebook"></i> <span class="hidden-mobile hidden-tablet">Social Network</span></a>
+            </li>
+
+            <li>
+              <a href="#s3" data-toggle="tab"><i class="fa fa-dollar"></i> <span class="hidden-mobile hidden-tablet">Revenue</span></a>
+            </li>
+          </ul>
+
+        <span class="jarviswidget-loader"><i class="fa fa-refresh fa-spin"></i></span></header>
+
+        <!-- widget div-->
+        <div class="no-padding" role="content">
+          <!-- widget edit box -->
+          <div class="jarviswidget-editbox">
+
+            test
+          </div>
+          <!-- end widget edit box -->
+
+          <div class="widget-body">
+            <!-- content -->
+            <div class="tab-content" id="myTabContent">
+              <div id="s1" class="tab-pane fade active in padding-10 no-padding-bottom">
+                <div class="row no-space">
+                  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <span class="demo-liveupdate-1"> <span class="onoffswitch-title">Live switch</span> <span class="onoffswitch">
+                        <input type="checkbox" id="start_interval" class="onoffswitch-checkbox" name="start_interval">
+                        <label for="start_interval" class="onoffswitch-label"> <div data-swchoff-text="OFF" data-swchon-text="ON" class="onoffswitch-inner"></div> <div class="onoffswitch-switch"></div> </label> </span> </span>
+                    <div class="chart-large txt-color-blue" id="updating-chart" style="padding: 0px; position: relative;"><canvas class="base" width="722" height="235"></canvas><canvas class="overlay" width="722" height="235" style="position: absolute; left: 0px; top: 0px;"></canvas><div style="font-size:smaller" class="tickLabels"><div style="color:#545454" class="xAxis x1Axis"><div style="position:absolute;text-align:center;left:-4px;top:221px;width:65px" class="tickLabel">0</div><div style="position:absolute;text-align:center;left:64px;top:221px;width:65px" class="tickLabel">10</div><div style="position:absolute;text-align:center;left:132px;top:221px;width:65px" class="tickLabel">20</div><div style="position:absolute;text-align:center;left:201px;top:221px;width:65px" class="tickLabel">30</div><div style="position:absolute;text-align:center;left:269px;top:221px;width:65px" class="tickLabel">40</div><div style="position:absolute;text-align:center;left:338px;top:221px;width:65px" class="tickLabel">50</div><div style="position:absolute;text-align:center;left:406px;top:221px;width:65px" class="tickLabel">60</div><div style="position:absolute;text-align:center;left:474px;top:221px;width:65px" class="tickLabel">70</div><div style="position:absolute;text-align:center;left:543px;top:221px;width:65px" class="tickLabel">80</div><div style="position:absolute;text-align:center;left:611px;top:221px;width:65px" class="tickLabel">90</div><div style="position:absolute;text-align:center;left:680px;top:221px;width:65px" class="tickLabel">100</div></div><div style="color:#545454" class="yAxis y1Axis"><div style="position:absolute;text-align:right;top:204px;right:704px;width:18px" class="tickLabel">0</div><div style="position:absolute;text-align:right;top:164px;right:704px;width:18px" class="tickLabel">20</div><div style="position:absolute;text-align:right;top:124px;right:704px;width:18px" class="tickLabel">40</div><div style="position:absolute;text-align:right;top:83px;right:704px;width:18px" class="tickLabel">60</div><div style="position:absolute;text-align:right;top:43px;right:704px;width:18px" class="tickLabel">80</div><div style="position:absolute;text-align:right;top:3px;right:704px;width:18px" class="tickLabel">100</div></div></div></div>
+
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 show-stats">
+
+                    <div class="row">
+                      <span class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> <span class="text"> My Tasks <span class="pull-right">130/200</span> </span>
+                        <div class="progress">
+                          <div style="width: 65%;" class="progress-bar bg-color-blueDark"></div>
+                        </div> </span>
+                      <span class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> <span class="text"> Transfered <span class="pull-right">440 GB</span> </span>
+                        <div class="progress">
+                          <div style="width: 34%;" class="progress-bar bg-color-blue"></div>
+                        </div> </span>
+                      <span class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> <span class="text"> Bugs Squashed<span class="pull-right">77%</span> </span>
+                        <div class="progress">
+                          <div style="width: 77%;" class="progress-bar bg-color-blue"></div>
+                        </div> </span>
+                      <span class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> <span class="text"> User Testing <span class="pull-right">7 Days</span> </span>
+                        <div class="progress">
+                          <div style="width: 84%;" class="progress-bar bg-color-greenLight"></div>
+                        </div> </span>
+
+                      <span class="show-stat-buttons"> <span class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> <a class="btn btn-default btn-block hidden-xs" href="javascript:void(0);">Generate PDF</a> </span> <span class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> <a class="btn btn-default btn-block hidden-xs" href="javascript:void(0);">Report a bug</a> </span> </span>
+
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="show-stat-microcharts">
+                  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+
+                    <div data-pie-size="50" data-percent="33" class="easy-pie-chart txt-color-orangeDark easyPieChart" style="width: 50px; height: 50px; line-height: 50px;">
+                      <span class="percent percent-sign">32</span>
+                    <canvas height="50" width="50"></canvas></div>
+                    <span class="easy-pie-title"> Server Load <i class="fa fa-caret-up icon-color-bad"></i> </span>
+                    <ul class="smaller-stat hidden-sm pull-right">
+                      <li>
+                        <span class="label bg-color-greenLight"><i class="fa fa-caret-up"></i> 97%</span>
+                      </li>
+                      <li>
+                        <span class="label bg-color-blueLight"><i class="fa fa-caret-down"></i> 44%</span>
+                      </li>
+                    </ul>
+                    <div data-fill-color="transparent" data-sparkline-width="70px" data-sparkline-height="33px" data-sparkline-type="line" class="sparkline txt-color-greenLight hidden-sm hidden-md pull-right"><canvas style="display: inline-block; width: 70px; height: 33px; vertical-align: top;" width="70" height="33"></canvas></div>
+                  </div>
+                  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                    <div data-pie-size="50" data-percent="78.9" class="easy-pie-chart txt-color-greenLight easyPieChart" style="width: 50px; height: 50px; line-height: 50px;">
+                      <span class="percent percent-sign">77</span>
+                    <canvas height="50" width="50"></canvas></div>
+                    <span class="easy-pie-title"> Disk Space <i class="fa fa-caret-down icon-color-good"></i></span>
+                    <ul class="smaller-stat hidden-sm pull-right">
+                      <li>
+                        <span class="label bg-color-blueDark"><i class="fa fa-caret-up"></i> 76%</span>
+                      </li>
+                      <li>
+                        <span class="label bg-color-blue"><i class="fa fa-caret-down"></i> 3%</span>
+                      </li>
+                    </ul>
+                    <div data-fill-color="transparent" data-sparkline-width="70px" data-sparkline-height="33px" data-sparkline-type="line" class="sparkline txt-color-blue hidden-sm hidden-md pull-right"><canvas style="display: inline-block; width: 70px; height: 33px; vertical-align: top;" width="70" height="33"></canvas></div>
+                  </div>
+                  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                    <div data-pie-size="50" data-percent="23" class="easy-pie-chart txt-color-blue easyPieChart" style="width: 50px; height: 50px; line-height: 50px;">
+                      <span class="percent percent-sign">22</span>
+                    <canvas height="50" width="50"></canvas></div>
+                    <span class="easy-pie-title"> Transfered <i class="fa fa-caret-up icon-color-good"></i></span>
+                    <ul class="smaller-stat hidden-sm pull-right">
+                      <li>
+                        <span class="label bg-color-darken">10GB</span>
+                      </li>
+                      <li>
+                        <span class="label bg-color-blueDark"><i class="fa fa-caret-up"></i> 10%</span>
+                      </li>
+                    </ul>
+                    <div data-fill-color="transparent" data-sparkline-width="70px" data-sparkline-height="33px" data-sparkline-type="line" class="sparkline txt-color-darken hidden-sm hidden-md pull-right"><canvas style="display: inline-block; width: 70px; height: 33px; vertical-align: top;" width="70" height="33"></canvas></div>
+                  </div>
+                  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                    <div data-pie-size="50" data-percent="36" class="easy-pie-chart txt-color-darken easyPieChart" style="width: 50px; height: 50px; line-height: 50px;">
+                      <span class="percent degree-sign">35</span>
+                    <canvas height="50" width="50"></canvas></div>
+                    <span class="easy-pie-title"> Temperature <i class="fa fa-caret-down icon-color-good"></i></span>
+                    <ul class="smaller-stat hidden-sm pull-right">
+                      <li>
+                        <span class="label bg-color-red"><i class="fa fa-caret-up"></i> 124</span>
+                      </li>
+                      <li>
+                        <span class="label bg-color-blue"><i class="fa fa-caret-down"></i> 40 F</span>
+                      </li>
+                    </ul>
+                    <div data-fill-color="transparent" data-sparkline-width="70px" data-sparkline-height="33px" data-sparkline-type="line" class="sparkline txt-color-red hidden-sm hidden-md pull-right"><canvas style="display: inline-block; width: 70px; height: 33px; vertical-align: top;" width="70" height="33"></canvas></div>
+                  </div>
+                </div>
+
+              </div>
+              <!-- end s1 tab pane -->
+
+              <div id="s2" class="tab-pane fade">
+                <div class="widget-body-toolbar bg-color-white">
+
+                  <form role="form" class="form-inline">
+
+                    <div class="form-group">
+                      <label for="s123" class="sr-only">Show From</label>
+                      <input type="email" placeholder="Show From" id="s123" class="form-control input-sm">
+                    </div>
+                    <div class="form-group">
+                      <input type="email" placeholder="To" id="s124" class="form-control input-sm">
+                    </div>
+
+                    <div class="btn-group hidden-phone pull-right">
+                      <a data-toggle="dropdown" class="btn dropdown-toggle btn-xs btn-default"><i class="fa fa-cog"></i> More <span class="caret"> </span> </a>
+                      <ul class="dropdown-menu pull-right">
+                        <li>
+                          <a href="javascript:void(0);"><i class="fa fa-file-text-alt"></i> Export to PDF</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);"><i class="fa fa-question-sign"></i> Help</a>
+                        </li>
+                      </ul>
+                    </div>
+
+                  </form>
+
+                </div>
+                <div class="padding-10">
+                  <div class="chart-large has-legend-unique" id="statsChart" style="padding: 0px; position: relative;"><canvas class="base" width="100" height="235"></canvas><canvas class="overlay" width="100" height="235" style="position: absolute; left: 0px; top: 0px;"></canvas><div style="font-size:smaller" class="tickLabels"><div style="color:#545454" class="xAxis x1Axis"><div style="position:absolute;text-align:center;left:7px;top:235px;width:7px" class="tickLabel">JAN</div><div style="position:absolute;text-align:center;left:13px;top:235px;width:7px" class="tickLabel">FEB</div><div style="position:absolute;text-align:center;left:20px;top:235px;width:7px" class="tickLabel">MAR</div><div style="position:absolute;text-align:center;left:27px;top:235px;width:7px" class="tickLabel">APR</div><div style="position:absolute;text-align:center;left:33px;top:235px;width:7px" class="tickLabel">MAY</div><div style="position:absolute;text-align:center;left:40px;top:235px;width:7px" class="tickLabel">JUN</div><div style="position:absolute;text-align:center;left:47px;top:235px;width:7px" class="tickLabel">JUL</div><div style="position:absolute;text-align:center;left:53px;top:235px;width:7px" class="tickLabel">AUG</div><div style="position:absolute;text-align:center;left:60px;top:235px;width:7px" class="tickLabel">SEP</div><div style="position:absolute;text-align:center;left:67px;top:235px;width:7px" class="tickLabel">OCT</div><div style="position:absolute;text-align:center;left:73px;top:235px;width:7px" class="tickLabel">NOV</div><div style="position:absolute;text-align:center;left:80px;top:235px;width:7px" class="tickLabel">DEC</div><div style="position:absolute;text-align:center;left:87px;top:235px;width:7px" class="tickLabel">JAN+1</div></div><div style="color:#545454" class="yAxis y1Axis"><div style="position:absolute;text-align:right;top:225px;right:100px;width:0px" class="tickLabel">0</div><div style="position:absolute;text-align:right;top:171px;right:100px;width:0px" class="tickLabel">20</div><div style="position:absolute;text-align:right;top:118px;right:100px;width:0px" class="tickLabel">40</div><div style="position:absolute;text-align:right;top:64px;right:100px;width:0px" class="tickLabel">60</div><div style="position:absolute;text-align:right;top:10px;right:100px;width:0px" class="tickLabel">80</div></div></div><div class="legend"><div style="position: absolute; width: 0px; height: 0px; top: -22px; right: 5px; opacity: 1;"> </div><table style="position:absolute;top:-22px;right:5px;;font-size: 11px; color:#545454"><tbody><tr><td class="legendColorBox"><div style=""><div style="border:2px solid rgb(86,138,137);overflow:hidden"></div></div></td><td class="legendLabel"><span>Twitter</span></td><td class="legendColorBox"><div style=""><div style="border:2px solid rgb(50,118,177);overflow:hidden"></div></div></td><td class="legendLabel"><span>Facebook</span></td></tr></tbody></table></div></div>
+                </div>
+
+              </div>
+              <!-- end s2 tab pane -->
+
+              <div id="s3" class="tab-pane fade">
+
+                <div id="rev-toggles" class="widget-body-toolbar bg-color-white smart-form">
+
+                  <div class="inline-group">
+
+                    <label class="checkbox" for="gra-0">
+                      <input type="checkbox" checked="checked" id="gra-0" name="gra-0">
+                      <i></i> Target </label>
+                    <label class="checkbox" for="gra-1">
+                      <input type="checkbox" checked="checked" id="gra-1" name="gra-1">
+                      <i></i> Actual </label>
+                    <label class="checkbox" for="gra-2">
+                      <input type="checkbox" checked="checked" id="gra-2" name="gra-2">
+                      <i></i> Signups </label>
+                  </div>
+
+                  <div class="btn-group hidden-phone pull-right">
+                    <a data-toggle="dropdown" class="btn dropdown-toggle btn-xs btn-default"><i class="fa fa-cog"></i> More <span class="caret"> </span> </a>
+                    <ul class="dropdown-menu pull-right">
+                      <li>
+                        <a href="javascript:void(0);"><i class="fa fa-file-text-alt"></i> Export to PDF</a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0);"><i class="fa fa-question-sign"></i> Help</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                </div>
+
+                <div class="padding-10">
+                  <div class="chart-large has-legend-unique" id="flotcontainer" style="padding: 0px; position: relative;"><canvas class="base" width="100" height="235"></canvas><canvas class="overlay" width="100" height="235" style="position: absolute; left: 0px; top: 0px;"></canvas><div style="font-size:smaller" class="tickLabels"><div style="color:#545454" class="xAxis x1Axis"><div style="position:absolute;text-align:center;left:5px;top:235px;width:16px" class="tickLabel">2013</div><div style="position:absolute;text-align:center;left:27px;top:235px;width:16px" class="tickLabel">2014</div><div style="position:absolute;text-align:center;left:49px;top:235px;width:16px" class="tickLabel">2015</div><div style="position:absolute;text-align:center;left:71px;top:235px;width:16px" class="tickLabel">2016</div></div><div style="color:#545454" class="yAxis y1Axis"><div style="position:absolute;text-align:right;top:225px;right:100px;width:0px" class="tickLabel">0</div><div style="position:absolute;text-align:right;top:182px;right:100px;width:0px" class="tickLabel">250</div><div style="position:absolute;text-align:right;top:139px;right:100px;width:0px" class="tickLabel">500</div><div style="position:absolute;text-align:right;top:96px;right:100px;width:0px" class="tickLabel">750</div><div style="position:absolute;text-align:right;top:53px;right:100px;width:0px" class="tickLabel">1000</div><div style="position:absolute;text-align:right;top:10px;right:100px;width:0px" class="tickLabel">1250</div></div></div><div class="legend"><div style="position: absolute; width: 0px; height: 0px; top: -22px; right: 5px; opacity: 1;"> </div><table style="position:absolute;top:-22px;right:5px;;font-size: 11px; color:#545454"><tbody><tr><td class="legendColorBox"><div style=""><div style="border:2px solid rgb(147,19,19);overflow:hidden"></div></div></td><td class="legendLabel"><span>Target Profit</span></td><td class="legendColorBox"><div style=""><div style="border:2px solid #3276B1;overflow:hidden"></div></div></td><td class="legendLabel"><span>Actual Profit</span></td><td class="legendColorBox"><div style=""><div style="border:2px solid #71843F;overflow:hidden"></div></div></td><td class="legendLabel"><span>Actual Signups</span></td></tr></tbody></table></div></div>
+                </div>
+              </div>
+              <!-- end s3 tab pane -->
+            </div>
+
+            <!-- end content -->
+          </div>
+
+        </div>
+        <!-- end widget div -->
+      
+
+      <header role="heading">
+          <span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+          <h2>Live Feeds </h2>
+
+          <ul id="myTab" class="nav nav-tabs pull-right in">
+            <li class="active">
+              <a href="#s1" data-toggle="tab"><i class="fa fa-clock-o"></i> <span class="hidden-mobile hidden-tablet">Live Stats</span></a>
+            </li>
+
+            <li>
+              <a href="#s2" data-toggle="tab"><i class="fa fa-facebook"></i> <span class="hidden-mobile hidden-tablet">Social Network</span></a>
+            </li>
+
+            <li>
+              <a href="#s3" data-toggle="tab"><i class="fa fa-dollar"></i> <span class="hidden-mobile hidden-tablet">Revenue</span></a>
+            </li>
+          </ul>
+
+        <span class="jarviswidget-loader"><i class="fa fa-refresh fa-spin"></i></span></header>
+
+        <div class="no-padding" role="content">
+          <!-- widget edit box -->
+          <div class="jarviswidget-editbox">
+
+            test
+          </div>
+          <!-- end widget edit box -->
+
+          <div class="widget-body">
+            <!-- content -->
+            <div class="tab-content" id="myTabContent">
+              <div id="s1" class="tab-pane fade active in padding-10 no-padding-bottom">
+                <div class="row no-space">
+                  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <span class="demo-liveupdate-1"> <span class="onoffswitch-title">Live switch</span> <span class="onoffswitch">
+                        <input type="checkbox" id="start_interval" class="onoffswitch-checkbox" name="start_interval">
+                        <label for="start_interval" class="onoffswitch-label"> <div data-swchoff-text="OFF" data-swchon-text="ON" class="onoffswitch-inner"></div> <div class="onoffswitch-switch"></div> </label> </span> </span>
+                    <div class="chart-large txt-color-blue" id="updating-chart" style="padding: 0px; position: relative;"><canvas class="base" width="722" height="235"></canvas><canvas class="overlay" width="722" height="235" style="position: absolute; left: 0px; top: 0px;"></canvas><div style="font-size:smaller" class="tickLabels"><div style="color:#545454" class="xAxis x1Axis"><div style="position:absolute;text-align:center;left:-4px;top:221px;width:65px" class="tickLabel">0</div><div style="position:absolute;text-align:center;left:64px;top:221px;width:65px" class="tickLabel">10</div><div style="position:absolute;text-align:center;left:132px;top:221px;width:65px" class="tickLabel">20</div><div style="position:absolute;text-align:center;left:201px;top:221px;width:65px" class="tickLabel">30</div><div style="position:absolute;text-align:center;left:269px;top:221px;width:65px" class="tickLabel">40</div><div style="position:absolute;text-align:center;left:338px;top:221px;width:65px" class="tickLabel">50</div><div style="position:absolute;text-align:center;left:406px;top:221px;width:65px" class="tickLabel">60</div><div style="position:absolute;text-align:center;left:474px;top:221px;width:65px" class="tickLabel">70</div><div style="position:absolute;text-align:center;left:543px;top:221px;width:65px" class="tickLabel">80</div><div style="position:absolute;text-align:center;left:611px;top:221px;width:65px" class="tickLabel">90</div><div style="position:absolute;text-align:center;left:680px;top:221px;width:65px" class="tickLabel">100</div></div><div style="color:#545454" class="yAxis y1Axis"><div style="position:absolute;text-align:right;top:204px;right:704px;width:18px" class="tickLabel">0</div><div style="position:absolute;text-align:right;top:164px;right:704px;width:18px" class="tickLabel">20</div><div style="position:absolute;text-align:right;top:124px;right:704px;width:18px" class="tickLabel">40</div><div style="position:absolute;text-align:right;top:83px;right:704px;width:18px" class="tickLabel">60</div><div style="position:absolute;text-align:right;top:43px;right:704px;width:18px" class="tickLabel">80</div><div style="position:absolute;text-align:right;top:3px;right:704px;width:18px" class="tickLabel">100</div></div></div></div>
+
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 show-stats">
+
+                    <div class="row">
+                      <span class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> <span class="text"> My Tasks <span class="pull-right">130/200</span> </span>
+                        <div class="progress">
+                          <div style="width: 65%;" class="progress-bar bg-color-blueDark"></div>
+                        </div> </span>
+                      <span class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> <span class="text"> Transfered <span class="pull-right">440 GB</span> </span>
+                        <div class="progress">
+                          <div style="width: 34%;" class="progress-bar bg-color-blue"></div>
+                        </div> </span>
+                      <span class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> <span class="text"> Bugs Squashed<span class="pull-right">77%</span> </span>
+                        <div class="progress">
+                          <div style="width: 77%;" class="progress-bar bg-color-blue"></div>
+                        </div> </span>
+                      <span class="col-xs-6 col-sm-6 col-md-12 col-lg-12"> <span class="text"> User Testing <span class="pull-right">7 Days</span> </span>
+                        <div class="progress">
+                          <div style="width: 84%;" class="progress-bar bg-color-greenLight"></div>
+                        </div> </span>
+
+                      <span class="show-stat-buttons"> <span class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> <a class="btn btn-default btn-block hidden-xs" href="javascript:void(0);">Generate PDF</a> </span> <span class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> <a class="btn btn-default btn-block hidden-xs" href="javascript:void(0);">Report a bug</a> </span> </span>
+
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="show-stat-microcharts">
+                  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+
+                    <div data-pie-size="50" data-percent="33" class="easy-pie-chart txt-color-orangeDark easyPieChart" style="width: 50px; height: 50px; line-height: 50px;">
+                      <span class="percent percent-sign">32</span>
+                    <canvas height="50" width="50"></canvas></div>
+                    <span class="easy-pie-title"> Server Load <i class="fa fa-caret-up icon-color-bad"></i> </span>
+                    <ul class="smaller-stat hidden-sm pull-right">
+                      <li>
+                        <span class="label bg-color-greenLight"><i class="fa fa-caret-up"></i> 97%</span>
+                      </li>
+                      <li>
+                        <span class="label bg-color-blueLight"><i class="fa fa-caret-down"></i> 44%</span>
+                      </li>
+                    </ul>
+                    <div data-fill-color="transparent" data-sparkline-width="70px" data-sparkline-height="33px" data-sparkline-type="line" class="sparkline txt-color-greenLight hidden-sm hidden-md pull-right"><canvas style="display: inline-block; width: 70px; height: 33px; vertical-align: top;" width="70" height="33"></canvas></div>
+                  </div>
+                  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                    <div data-pie-size="50" data-percent="78.9" class="easy-pie-chart txt-color-greenLight easyPieChart" style="width: 50px; height: 50px; line-height: 50px;">
+                      <span class="percent percent-sign">77</span>
+                    <canvas height="50" width="50"></canvas></div>
+                    <span class="easy-pie-title"> Disk Space <i class="fa fa-caret-down icon-color-good"></i></span>
+                    <ul class="smaller-stat hidden-sm pull-right">
+                      <li>
+                        <span class="label bg-color-blueDark"><i class="fa fa-caret-up"></i> 76%</span>
+                      </li>
+                      <li>
+                        <span class="label bg-color-blue"><i class="fa fa-caret-down"></i> 3%</span>
+                      </li>
+                    </ul>
+                    <div data-fill-color="transparent" data-sparkline-width="70px" data-sparkline-height="33px" data-sparkline-type="line" class="sparkline txt-color-blue hidden-sm hidden-md pull-right"><canvas style="display: inline-block; width: 70px; height: 33px; vertical-align: top;" width="70" height="33"></canvas></div>
+                  </div>
+                  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                    <div data-pie-size="50" data-percent="23" class="easy-pie-chart txt-color-blue easyPieChart" style="width: 50px; height: 50px; line-height: 50px;">
+                      <span class="percent percent-sign">22</span>
+                    <canvas height="50" width="50"></canvas></div>
+                    <span class="easy-pie-title"> Transfered <i class="fa fa-caret-up icon-color-good"></i></span>
+                    <ul class="smaller-stat hidden-sm pull-right">
+                      <li>
+                        <span class="label bg-color-darken">10GB</span>
+                      </li>
+                      <li>
+                        <span class="label bg-color-blueDark"><i class="fa fa-caret-up"></i> 10%</span>
+                      </li>
+                    </ul>
+                    <div data-fill-color="transparent" data-sparkline-width="70px" data-sparkline-height="33px" data-sparkline-type="line" class="sparkline txt-color-darken hidden-sm hidden-md pull-right"><canvas style="display: inline-block; width: 70px; height: 33px; vertical-align: top;" width="70" height="33"></canvas></div>
+                  </div>
+                  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                    <div data-pie-size="50" data-percent="36" class="easy-pie-chart txt-color-darken easyPieChart" style="width: 50px; height: 50px; line-height: 50px;">
+                      <span class="percent degree-sign">35</span>
+                    <canvas height="50" width="50"></canvas></div>
+                    <span class="easy-pie-title"> Temperature <i class="fa fa-caret-down icon-color-good"></i></span>
+                    <ul class="smaller-stat hidden-sm pull-right">
+                      <li>
+                        <span class="label bg-color-red"><i class="fa fa-caret-up"></i> 124</span>
+                      </li>
+                      <li>
+                        <span class="label bg-color-blue"><i class="fa fa-caret-down"></i> 40 F</span>
+                      </li>
+                    </ul>
+                    <div data-fill-color="transparent" data-sparkline-width="70px" data-sparkline-height="33px" data-sparkline-type="line" class="sparkline txt-color-red hidden-sm hidden-md pull-right"><canvas style="display: inline-block; width: 70px; height: 33px; vertical-align: top;" width="70" height="33"></canvas></div>
+                  </div>
+                </div>
+
+              </div>
+              <!-- end s1 tab pane -->
+
+              <div id="s2" class="tab-pane fade">
+                <div class="widget-body-toolbar bg-color-white">
+
+                  <form role="form" class="form-inline">
+
+                    <div class="form-group">
+                      <label for="s123" class="sr-only">Show From</label>
+                      <input type="email" placeholder="Show From" id="s123" class="form-control input-sm">
+                    </div>
+                    <div class="form-group">
+                      <input type="email" placeholder="To" id="s124" class="form-control input-sm">
+                    </div>
+
+                    <div class="btn-group hidden-phone pull-right">
+                      <a data-toggle="dropdown" class="btn dropdown-toggle btn-xs btn-default"><i class="fa fa-cog"></i> More <span class="caret"> </span> </a>
+                      <ul class="dropdown-menu pull-right">
+                        <li>
+                          <a href="javascript:void(0);"><i class="fa fa-file-text-alt"></i> Export to PDF</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);"><i class="fa fa-question-sign"></i> Help</a>
+                        </li>
+                      </ul>
+                    </div>
+
+                  </form>
+
+                </div>
+                <div class="padding-10">
+                  <div class="chart-large has-legend-unique" id="statsChart" style="padding: 0px; position: relative;"><canvas class="base" width="100" height="235"></canvas><canvas class="overlay" width="100" height="235" style="position: absolute; left: 0px; top: 0px;"></canvas><div style="font-size:smaller" class="tickLabels"><div style="color:#545454" class="xAxis x1Axis"><div style="position:absolute;text-align:center;left:7px;top:235px;width:7px" class="tickLabel">JAN</div><div style="position:absolute;text-align:center;left:13px;top:235px;width:7px" class="tickLabel">FEB</div><div style="position:absolute;text-align:center;left:20px;top:235px;width:7px" class="tickLabel">MAR</div><div style="position:absolute;text-align:center;left:27px;top:235px;width:7px" class="tickLabel">APR</div><div style="position:absolute;text-align:center;left:33px;top:235px;width:7px" class="tickLabel">MAY</div><div style="position:absolute;text-align:center;left:40px;top:235px;width:7px" class="tickLabel">JUN</div><div style="position:absolute;text-align:center;left:47px;top:235px;width:7px" class="tickLabel">JUL</div><div style="position:absolute;text-align:center;left:53px;top:235px;width:7px" class="tickLabel">AUG</div><div style="position:absolute;text-align:center;left:60px;top:235px;width:7px" class="tickLabel">SEP</div><div style="position:absolute;text-align:center;left:67px;top:235px;width:7px" class="tickLabel">OCT</div><div style="position:absolute;text-align:center;left:73px;top:235px;width:7px" class="tickLabel">NOV</div><div style="position:absolute;text-align:center;left:80px;top:235px;width:7px" class="tickLabel">DEC</div><div style="position:absolute;text-align:center;left:87px;top:235px;width:7px" class="tickLabel">JAN+1</div></div><div style="color:#545454" class="yAxis y1Axis"><div style="position:absolute;text-align:right;top:225px;right:100px;width:0px" class="tickLabel">0</div><div style="position:absolute;text-align:right;top:171px;right:100px;width:0px" class="tickLabel">20</div><div style="position:absolute;text-align:right;top:118px;right:100px;width:0px" class="tickLabel">40</div><div style="position:absolute;text-align:right;top:64px;right:100px;width:0px" class="tickLabel">60</div><div style="position:absolute;text-align:right;top:10px;right:100px;width:0px" class="tickLabel">80</div></div></div><div class="legend"><div style="position: absolute; width: 0px; height: 0px; top: -22px; right: 5px; opacity: 1;"> </div><table style="position:absolute;top:-22px;right:5px;;font-size: 11px; color:#545454"><tbody><tr><td class="legendColorBox"><div style=""><div style="border:2px solid rgb(86,138,137);overflow:hidden"></div></div></td><td class="legendLabel"><span>Twitter</span></td><td class="legendColorBox"><div style=""><div style="border:2px solid rgb(50,118,177);overflow:hidden"></div></div></td><td class="legendLabel"><span>Facebook</span></td></tr></tbody></table></div></div>
+                </div>
+
+              </div>
+              <!-- end s2 tab pane -->
+
+              <div id="s3" class="tab-pane fade">
+
+                <div id="rev-toggles" class="widget-body-toolbar bg-color-white smart-form">
+
+                  <div class="inline-group">
+
+                    <label class="checkbox" for="gra-0">
+                      <input type="checkbox" checked="checked" id="gra-0" name="gra-0">
+                      <i></i> Target </label>
+                    <label class="checkbox" for="gra-1">
+                      <input type="checkbox" checked="checked" id="gra-1" name="gra-1">
+                      <i></i> Actual </label>
+                    <label class="checkbox" for="gra-2">
+                      <input type="checkbox" checked="checked" id="gra-2" name="gra-2">
+                      <i></i> Signups </label>
+                  </div>
+
+                  <div class="btn-group hidden-phone pull-right">
+                    <a data-toggle="dropdown" class="btn dropdown-toggle btn-xs btn-default"><i class="fa fa-cog"></i> More <span class="caret"> </span> </a>
+                    <ul class="dropdown-menu pull-right">
+                      <li>
+                        <a href="javascript:void(0);"><i class="fa fa-file-text-alt"></i> Export to PDF</a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0);"><i class="fa fa-question-sign"></i> Help</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                </div>
+
+                <div class="padding-10">
+                  <div class="chart-large has-legend-unique" id="flotcontainer" style="padding: 0px; position: relative;"><canvas class="base" width="100" height="235"></canvas><canvas class="overlay" width="100" height="235" style="position: absolute; left: 0px; top: 0px;"></canvas><div style="font-size:smaller" class="tickLabels"><div style="color:#545454" class="xAxis x1Axis"><div style="position:absolute;text-align:center;left:5px;top:235px;width:16px" class="tickLabel">2013</div><div style="position:absolute;text-align:center;left:27px;top:235px;width:16px" class="tickLabel">2014</div><div style="position:absolute;text-align:center;left:49px;top:235px;width:16px" class="tickLabel">2015</div><div style="position:absolute;text-align:center;left:71px;top:235px;width:16px" class="tickLabel">2016</div></div><div style="color:#545454" class="yAxis y1Axis"><div style="position:absolute;text-align:right;top:225px;right:100px;width:0px" class="tickLabel">0</div><div style="position:absolute;text-align:right;top:182px;right:100px;width:0px" class="tickLabel">250</div><div style="position:absolute;text-align:right;top:139px;right:100px;width:0px" class="tickLabel">500</div><div style="position:absolute;text-align:right;top:96px;right:100px;width:0px" class="tickLabel">750</div><div style="position:absolute;text-align:right;top:53px;right:100px;width:0px" class="tickLabel">1000</div><div style="position:absolute;text-align:right;top:10px;right:100px;width:0px" class="tickLabel">1250</div></div></div><div class="legend"><div style="position: absolute; width: 0px; height: 0px; top: -22px; right: 5px; opacity: 1;"> </div><table style="position:absolute;top:-22px;right:5px;;font-size: 11px; color:#545454"><tbody><tr><td class="legendColorBox"><div style=""><div style="border:2px solid rgb(147,19,19);overflow:hidden"></div></div></td><td class="legendLabel"><span>Target Profit</span></td><td class="legendColorBox"><div style=""><div style="border:2px solid #3276B1;overflow:hidden"></div></div></td><td class="legendLabel"><span>Actual Profit</span></td><td class="legendColorBox"><div style=""><div style="border:2px solid #71843F;overflow:hidden"></div></div></td><td class="legendLabel"><span>Actual Signups</span></td></tr></tbody></table></div></div>
+                </div>
+              </div>
+              <!-- end s3 tab pane -->
+            </div>
+
+            <!-- end content -->
+          </div>
+
+        </div>
+
+</article>

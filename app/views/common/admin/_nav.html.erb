@@ -9,7 +9,7 @@
         <!-- logout button -->
         <div class="btn-header transparent pull-right" id="logout">
           <span>
-            <a title="Sign Out" href="login.html"><i class="fa fa-sign-out"></i></a>
+            <%= link_to('<i class="fa fa-sign-out"></i>'.html_safe, destroy_user_session_path, :method => :delete) %>
           </span>
         </div>
         <!-- end logout button -->
@@ -36,16 +36,16 @@
         <ul class="header-dropdown-list hidden-xs">
           <li>
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-              <img src="img/flags/us.png" alt="">
+              <%= image_tag "smartadmin/flags/us.png" %>
               <span>
                 US
               </span>
               <i class="fa fa-angle-down"></i>
             </a>
             <ul class="dropdown-menu pull-right">
-              <li class="active"><a href="javascript:void(0);"><img src="img/flags/us.png" alt=""> US</a></li>
-              <li><a href="javascript:void(0);"><img src="img/flags/es.png" alt=""> Spanish</a></li>
-              <li><a href="javascript:void(0);"><img src="img/flags/de.png" alt=""> German</a></li>
+              <li class="active"><a href="javascript:void(0);"><%= image_tag "smartadmin/flags/us.png" %> US</a></li>
+              <li><a href="javascript:void(0);"><%= image_tag "smartadmin/flags/es.png" %> Spanish</a></li>
+              <li><a href="javascript:void(0);"><%= image_tag "smartadmin/flags/de.png" %> German</a></li>
             </ul>
           </li>
         </ul>
