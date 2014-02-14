@@ -24,6 +24,7 @@ gem 'execjs'
 gem 'therubyracer'
 
 gem 'devise'
+gem 'httparty'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

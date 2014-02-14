@@ -3,7 +3,7 @@
     <span>
       <!-- User image size is adjusted inside CSS, it should stay as it --> 
       <%= image_tag "smartadmin/avatars/sunny.png", :class=>"online" %>
-      <a id="show-shortcut" href="javascript:void(0);"><%= current_user.first_name + " " +current_user.last_name %> <i class="fa fa-angle-down"></i></a>
+      <a id="show-shortcut" href="javascript:void(0);"><%= (current_user.first_name + " " +current_user.last_name)[0,11] %> <i class="fa fa-angle-down"></i></a>
     </span>
   </div>
   <nav>
@@ -12,7 +12,7 @@
         <%= link_to '<i class="fa fa-lg fa-fw fa-home"></i>  <span class="menu-item-parent">Dashboard</span>'.html_safe, dashboard_index_path  %>
       </li>
       <li>
-        <%= link_to '<i class="fa fa-lg fa-fw fa-desktop"></i>  <span class="menu-item-parent">Spaces</span>'.html_safe, ""  %>
+        <%= link_to '<i class="fa fa-lg fa-fw fa-desktop"></i>  <span class="menu-item-parent">Spaces</span>'.html_safe, spaces_path  %>
       </li>
       <li>
         <%= link_to '<i class="fa fa-lg fa-fw fa-list-alt"></i>  <span class="menu-item-parent">Departments</span>'.html_safe, ""  %>
@@ -31,6 +31,10 @@
       </li>
       <li>
         <%= link_to '<i class="fa fa-lg fa-fw fa-windows"></i>  <span class="menu-item-parent">Utilities</span>'.html_safe, ""  %>
+        <ul>
+          <li><a href="ajax/typography.html">Typography</a></li>
+          <li><a href="ajax/typography.html">Typography</a></li>
+        </ul>
       </li>
     </ul>
   </nav>

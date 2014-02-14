@@ -1,0 +1,76 @@
+<% content_for :quick_snap do %>
+  <ul class="" id="sparks">
+      <li class="sparks-info">
+        <h5> Total Spaces <span class="txt-color-blue"><%= @spaces.size %></span></h5>
+        <div class="sparkline txt-color-blue hidden-mobile hidden-md hidden-sm"><canvas style="display: inline-block; width: 89px; height: 26px; vertical-align: top;" width="89" height="26"></canvas></div>
+      </li>
+      <li class="sparks-info">
+        <h5> Your Spaces <span class="txt-color-purple"><i title="Increased" data-rel="bootstrap-tooltip" class="fa fa-arrow-circle-up"></i>&nbsp;45%</span></h5>
+        <div class="sparkline txt-color-purple hidden-mobile hidden-md hidden-sm"><canvas style="display: inline-block; width: 82px; height: 26px; vertical-align: top;" width="82" height="26"></canvas></div>
+      </li>
+      
+    </ul>
+<% end %>
+
+<div class="row">
+  <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sortable-grid ui-sortable">
+    <div id="wid-id-0" class="jarviswidget jarviswidget-color-darken jarviswidget-sortable">
+      <header role="heading">
+        <div class="jarviswidget-ctrls" role="menu">  
+         <a data-placement="bottom" title="" rel="tooltip" class="button-icon jarviswidget-toggle-btn" href="#" data-original-title="Collapse"><i class="fa fa-minus "></i></a> 
+         <a data-placement="bottom" title="" rel="tooltip" class="button-icon jarviswidget-fullscreen-btn" href="javascript:void(0);" data-original-title="Fullscreen"><i class="fa fa-resize-full "></i></a> 
+         <a data-placement="bottom" title="" rel="tooltip" class="button-icon jarviswidget-delete-btn" href="javascript:void(0);" data-original-title="Delete"><i class="fa fa-times"></i></a>
+        </div>
+
+        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+        <h2>Spaces</h2>
+
+        <span class="jarviswidget-loader"><i class="fa fa-refresh fa-spin"></i></span>
+      </header>
+      <div role="content">
+
+          <!-- widget edit box -->
+          <div class="jarviswidget-editbox">
+            <!-- This area used as dropdown edit box -->
+
+          </div>
+          <!-- end widget edit box -->
+
+          <!-- widget content -->
+          <div class="widget-body">
+            <p>Lists all spaces that are created on <code><%= AppConfig.pm_config['tool_name'] %></code></p>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Created at</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+              <% if @spaces.blank? %>
+                <tr>
+                  <td colspan="3" class="text-center text-muted">NOTHING FOUND!</td>
+                </tr>
+              <% else %>
+                <% @spaces.each do |s| %>
+                  <tr>
+                    <td><%= s['name'] %></td>
+                    <td><%= CommonUtils.date_format(s['created_at'], "date") %></td>
+                    <td><%= s['status'] %></td>
+                  </tr>
+                  <% end %>
+              <% end %>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- end widget content -->
+
+        </div>
+
+    </div>
+  </article>
+
+</div>
+

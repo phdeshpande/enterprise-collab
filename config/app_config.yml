@@ -6,3 +6,12 @@
 environment:
   local_server: true
   enable_caching: true
+
+# Project Management Tool - Assembla API
+pm_config:
+  tool_name: 'Assembla'
+  url: 'https://api.assembla.com'
+  version: 'v1'
+  response_type: 'json'
+  api_key: 'd7e21aed516e2b257a7f'
+  api_secret_key: '0d058ac99c797210b62a28a7a93c24f25df52136'

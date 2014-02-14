@@ -4,8 +4,8 @@
 
 <%= render "common/flash_messages", :locals => {flash => flash } %>
 
-<span id="login-header-space"> 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+<span id="login-header-space"> 
   <h4 class="hidden-mobile">Need an account?</h4> 
   <%= link_to "Create account", new_registration_path(resource_name), :class=>"btn btn-danger" %>
 </span>

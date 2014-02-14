@@ -10,5 +10,7 @@
  *
  *= require_self
  *= require smartadmin
+ *= require global
+ *= require admin
  * require_tree .
  */

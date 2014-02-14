@@ -8,10 +8,11 @@
 <%= render "common/admin/projects" %>
 <!-- end projects dropdown -->
 
+<%= render "common/flash_messages", :locals => {flash => flash } %>
+
 <!-- pulled right: nav area -->
 <div class="pull-right">
  <%= render "common/admin/nav" %> 
 </div>
 <!-- end pulled right: nav area -->
 
-<%= render "common/flash_messages", :locals => {flash => flash } %>
