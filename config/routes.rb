@@ -1,5 +1,6 @@
 EnterpriseCollab::Application.routes.draw do
   
+  get "administrator/index"
   # devise_scope :user do
     # match "users/sign_in" => "home#index", :via => [:get, :post]
   # end  

@@ -1,0 +1,23 @@
+<h1>Listing products</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admins.each do |product| %>
+      <tr>
+        <td><%= product.first_name %>  <%= product.last_name %></td>
+        <td><%= product.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
