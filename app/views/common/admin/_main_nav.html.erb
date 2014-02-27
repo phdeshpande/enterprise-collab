@@ -15,6 +15,10 @@
         <%= link_to '<i class="fa fa-lg fa-fw fa-desktop"></i>  <span class="menu-item-parent">Spaces</span>'.html_safe, spaces_path  %>
       </li>
       <li>
+        <%= link_to '<i class="fa fa-lg fa-fw fa-group"></i>  <span class="menu-item-parent">Groups</span>'.html_safe, "" %>
+      </li>
+
+      <li>
         <%= link_to '<i class="fa fa-lg fa-fw fa-list-alt"></i>  <span class="menu-item-parent">Departments</span>'.html_safe, ""  %>
       </li>
       <li>
@@ -33,19 +37,20 @@
         <%= link_to '<i class="fa fa-lg fa-fw fa-windows"></i>  <span class="menu-item-parent">Utilities</span>'.html_safe, ""  %>
         <ul>
           <li><a href="ajax/typography.html">Typography</a></li>
-          <li><a href="ajax/typography.html">Typography</a></li>
         </ul>
       </li>
+      
+      <li>
+        <%= link_to '<i class="fa fa-lg fa-fw fa-gears"></i>  <span class="menu-item-parent">Administration</span>'.html_safe, ""  %>
+        <ul>
+          <li><a href="/administration">Manage Users</a></li>
+          <li><a href="">Manage Accounts</a></li>
+        </ul>
+      </li>
+    
     </ul>
 
-    <li>
-        <%= link_to '<i class="fa fa-lg fa-fw fa-gears"></i>  <span class="menu-item-parent">Administrator</span>'.html_safe, administrator_index_path  %>
-        <ul>
-          <li><a href="/adminstrator/manageusers">Manage Users</a></li>
-          <li><a href="/adminstrator/manageaccounts">Manage Accounts</a></li>
-        </ul>
-      </li>
-    </ul>
+    
   </nav>
 
   <span class="minifyme">
