@@ -1,8 +1,9 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3>Users<div class="pull-right"> <%= link_to 'Create User',  new_administration_path %></h3>
+    <h3>Users<div class="pull-right"> <a data-target="#myModal" data-toggle="modal" href="#"> +Create User</a></h3>
   </div>
-  </div>
+</div>
+  
   <table class="table" border="1">
    <tr>
    	 <th> First Name </th>
@@ -19,6 +20,42 @@
   </table>
 </div>
 
-<div class="pull-right">
-  <h3><%= link_to 'Invite People',  new_administration_path %></h3>
+<!--  <h3><%#= link_to 'Invite People',  new_administration_path %></h3>
+</div>-->
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade" style="display: none;">
+   <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="modal-header">
+      <button aria-hidden="true" data-dismiss="modal" class="close" type="button">
+       ×
+      </button>
+      <h4 id="myModalLabel" class="modal-title">Create User</h4>
+     </div>
+     <div class="modal-body custom-scroll terms-body">
+      <div id="left">
+        <form action="" method="POST">
+        <label>First Name:  
+        <input type="text" first-name="first-name" />
+        </label><br/>
+        <label>Last Name:
+        <input type="text" last-name="last-name" />
+        </label><br/>
+        <label>Email:
+        <input type="email" name="email"/>  
+        </label>
+        
+      </div>
+
+     <div class="modal-footer">
+      <button data-dismiss="modal" class="btn btn-default" type="button">
+       Cancel
+      </button>
+      <button id="i-agree" class="btn btn-primary" type="button">
+       <i class="fa fa-check"></i>Create
+      </button>
+      </form>
+     </div>
+    </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+  </div>
 </div>
