@@ -4,16 +4,49 @@
   </div>
   <table class="table" border="1">
    <tr>
-   	 <th> First Name </th>
-   	 <th> Last Name </th>
+   	 <th> Name </th>
    	 <th> Email </th>
+     <th> Group</th>
+     <th> Status </th>
+     <th> </th>
    </tr>
    <% @users.each do |user| %>
      <tr>
      	<td><%=user.first_name%> </td>
-     	<td><%=user.last_name%> </td>
      	<td><%=user.email%> </td>
-     </tr>	
-    <% end %>
+      <td> <%= link_to 'Assign', @user%> </td>
+      <td> </td>
+
+      
+     <td> <a data-target="#myModal" data-toggle="modal" href="#"> View </a>| 
+    <%= link_to 'delete', @user%></td>
+     </tr>
+<% end %>
+
   </table>
+  <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade" style="display: none;">
+   <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="modal-header">
+      <button aria-hidden="true" data-dismiss="modal" class="close" type="button">
+       ×
+      </button>
+      <h4 id="myModalLabel" class="modal-title"><%=current_user.first_name%> info</h4>
+     </div>
+     <div class="modal-body custom-scroll terms-body">
+      <p> Name : <%=current_user.first_name%></p>
+      <p> Email : <%=current_user.email%></p>
+    </div>
+    <div class="modal-footer">
+      <button data-dismiss="modal" class="btn btn-default" type="button">
+       Cancel
+      </button>
+      
+      
+     
+     </div>
+    </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+  </div>
+  
 </div>
