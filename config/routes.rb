@@ -2,7 +2,7 @@ EnterpriseCollab::Application.routes.draw do
   
 
   get "administrator/index"
-  get "administration/manage_users"
+  match "administration/manage_users" => "administration#manage_users", :via => [:get, :post]
   get "administration/manage_accounts"
   # devise_scope :user do
     # match "users/sign_in" => "home#index", :via => [:get, :post]

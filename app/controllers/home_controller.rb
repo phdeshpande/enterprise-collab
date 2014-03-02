@@ -1,8 +1,7 @@
 class HomeController < ApplicationController
   layout "public"
 
-  def index
-    
+  def index   
   end
 
   def register
