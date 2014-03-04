@@ -1,9 +1,5 @@
 EnterpriseCollab::Application.routes.draw do
   
-  
-  #get "user/index"
-  #get "administration/manage_users"
-  #get "administration/manage_accounts"
   # devise_scope :user do
     # match "users/sign_in" => "home#index", :via => [:get, :post]
   # end 
@@ -12,7 +8,6 @@ EnterpriseCollab::Application.routes.draw do
  
   resources :dashboard
   resources :spaces
-  resources :administration
   resources :users
   # get "/register" => 'home#register'
   # The priority is based upon order of creation: first created -> highest priority.
