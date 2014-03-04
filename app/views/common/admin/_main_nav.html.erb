@@ -39,15 +39,15 @@
           <li><a href="ajax/typography.html">Typography</a></li>
         </ul>
       </li>
-       
+       <% if current_user.is_admin?%>
       <li>
         <%= link_to '<i class="fa fa-lg fa-fw fa-gears"></i>  <span class="menu-item-parent">Administration</span>'.html_safe, ""  %>
         <ul>
-          <li><a href="/administration">Manage Users</a></li>
+          <li><a href="/users">Manage Users</a></li>
           <li><a href="">Manage Accounts</a></li>
         </ul>
       </li>
-      
+      <%end%>
     </ul>
   </nav>
 i

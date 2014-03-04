@@ -8,4 +8,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     # Set admin and account_id for User       
     resource.update_attributes!({:account_id => acc.id, :is_admin => true}) unless flash.blank?
   end
+
+  def show
+  end 
 end

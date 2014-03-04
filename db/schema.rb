@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140201214912) do
+ActiveRecord::Schema.define(version: 20140301114251) do
 
   create_table "accounts", force: true do |t|
     t.string  "subdomain"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 20140201214912) do
     t.string  "work_phone"
     t.string  "mobile_number"
     t.integer "status",        limit: 3, default: 0
+  end
+
+  create_table "roles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles_users", id: false, force: true do |t|
+    t.integer "role_id", null: false
+    t.integer "user_id", null: false
   end
 
   create_table "users", force: true do |t|
