@@ -26,6 +26,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     respond_to do |format|
+      resource.update_attributes!({:account_id => acc.id, :is_admin => false}) unless flash.blank?
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user }
@@ -68,6 +69,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email)
+      params.require(:user).permit(:first_name, :last_name, :email, :password)
     end
 end
