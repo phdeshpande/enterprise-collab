@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>Listing Groups<div class="pull-right"> 
+      <%= link_to 'Create Groups', new_group_path %>
+    </h1>
+  </div>
+</div>
+<div> 
+
+<table class="table" border="1">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+     </tr>
+  </thead>
+
+  <tbody>
+    <% @groups.each do |group| %>
+      <tr>
+        <% if group.status == 0 %>
+        <td><%= group.id %></td>
+        <td><%= group.name %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+
