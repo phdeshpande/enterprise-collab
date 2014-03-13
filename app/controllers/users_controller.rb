@@ -24,9 +24,12 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
+    @user.is_admin=false
+    @user.account_id=current_user.account_id
+    @user.status = 0
+    @user.is_active = 0
     respond_to do |format|
-      resource.update_attributes!({:account_id => acc.id, :is_admin => false}) unless flash.blank?
+      
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user }
@@ -34,6 +37,7 @@ class UsersController < ApplicationController
         format.html { render action: 'new' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
+      resource.update_attributes!({:account_id => current_user.account_id, :is_admin => false}) unless flash.blank?
     end
   end
 

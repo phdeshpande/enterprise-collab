@@ -4,6 +4,7 @@
       <%= link_to 'Create Users', new_user_path %>
     </h1>
   </div>
+</div>
 <div> 
 
 <table class="table" border="1">
@@ -13,18 +14,21 @@
       <th>Email</th>
       <th>Group</th>
       <th>Status</th>
-      <th>Action</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <% if user.status == 0 %>
         <td><%= user.first_name%> <%=user.last_name %></td>
         <td><%= user.email %></td>
-        <td><%#= link_to 'Assign', %></td>
-        <td><%#= user.is_active%></td>
-        <td><%= link_to 'view', user %>|<%= link_to 'delete',user, method: :delete, data: { confirm: 'Are you sure?' }%></td>
+        <td><a href="#">Assign</a></td>
+        <!-- Should display a list of available groups , optimal solution is use of radio buttons-->
+        <td><% if(user.sign_in_count == 0)%> Deactivated <% else %> Activated <% end %> </td>
+        <td><a data-target="#myModal" data-toggle="modal" href="#">View </a>|<%= link_to 'delete',user, method: :delete, data: { confirm: 'Are you sure?' }%></td>
+        <%end%>
       </tr>
     <% end %>
   </tbody>
@@ -39,10 +43,10 @@
       <button aria-hidden="true" data-dismiss="modal" class="close" type="button">
        ×
       </button>
-      <h4 id="myModalLabel" class="modal-title">Listing Users</h4>
+      <h4 id="myModalLabel" class="modal-title">Profile Information</h4>
      </div>
      <div class="modal-body custom-scroll terms-body">
-     </div>
+      
      </div>
       <div class="modal-footer">
       <button data-dismiss="modal" class="btn btn-default" type="button">
@@ -55,4 +59,5 @@
     </div><!-- /.modal-content -->
    </div><!-- /.modal-dialog -->
   </div>
-
+</div>
+</div>

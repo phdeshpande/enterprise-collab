@@ -1,5 +1,8 @@
 EnterpriseCollab::Application.routes.draw do
   
+  get "groups/index"
+  get "groups/show"
+  get "groups/new"
   get "accounts/index"
   get "users/create"
   post "users/create"
