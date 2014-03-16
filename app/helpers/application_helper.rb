@@ -12,9 +12,20 @@ module ApplicationHelper
     end
   end
 
+  # Return page title
+  # @params string, string
+  # @return html_string
   def page_title(title, action)
-    action = action == "index" ? "Home" : action
+    action = (action == "index") ? "Home" : action
     "#{title.camelize} <span>&gt; #{action} </span>".html_safe
   end  
+
+  # Checks if set to ENABLED/DISABLED value
+  # @param Integer
+  # @return Bool
+  def enabled?(status)
+    return (status == SettingsConfig::ENABLED)
+  end
+
   
 end
