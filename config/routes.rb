@@ -6,6 +6,7 @@ EnterpriseCollab::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => "users/registrations"}
   resources :dashboard
   resources :spaces
+  resources  :groups
 
   # get "/register" => 'home#register'
   # The priority is based upon order of creation: first created -> highest priority.
