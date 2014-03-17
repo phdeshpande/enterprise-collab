@@ -5,7 +5,7 @@
         <div class="sparkline txt-color-blue hidden-mobile hidden-md hidden-sm"><canvas style="display: inline-block; width: 89px; height: 26px; vertical-align: top;" width="89" height="26"></canvas></div>
       </li>
       <li class="sparks-info">
-        <h5> Your Spaces <span class="txt-color-purple"><i title="Increased" data-rel="bootstrap-tooltip" class="fa fa-arrow-circle-up"></i>&nbsp;45%</span></h5>
+        <h5>Active Spaces <span id="active-spaces" class="txt-color-purple"> </span></h5>
         <div class="sparkline txt-color-purple hidden-mobile hidden-md hidden-sm"><canvas style="display: inline-block; width: 82px; height: 26px; vertical-align: top;" width="82" height="26"></canvas></div>
       </li>
       
@@ -48,6 +48,7 @@
                 </tr>
               </thead>
               <tbody>
+              <% active_spaces = 0 %>
               <% if @spaces.blank? %>
                 <tr>
                   <td colspan="3" class="text-center text-muted">NOTHING FOUND!</td>
@@ -57,8 +58,9 @@
                   <tr>
                     <td><%= s['name'] %></td>
                     <td><%= CommonUtils.date_format(s['created_at'], "date") %></td>
-                    <td><%= s['status'] %></td>
+                    <td><%= SettingsConfig::STATUS[s['status']] %></td>
                   </tr>
+                  <% active_spaces = (active_spaces + 1) if enabled?(s['status']) %>
                   <% end %>
               <% end %>
               </tbody>
@@ -73,4 +75,9 @@
   </article>
 
 </div>
+<script type="text/javascript">
+  $(document).ready( function () {
+    init(<%= (active_spaces*100)/@spaces.size %>);
+  });
 
+</script>
