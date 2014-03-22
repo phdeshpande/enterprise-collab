@@ -16,7 +16,6 @@
 //= require smartadmin/notification/SmartNotification.min.js
 //= require smartadmin/smartwidgets/jarvis.widget.min.js
 //= require_tree ./smartadmin/plugin/
-//= require smartadmin/plugin/jquery-validate/jquery.validate.min.js
 //= require smartadmin/demo
 //= require smartadmin/app
 // require_tree .

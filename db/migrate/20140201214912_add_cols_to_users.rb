@@ -7,5 +7,7 @@ class AddColsToUsers < ActiveRecord::Migration
     add_column :users, :work_number, :string, :limit => 25
     add_column :users, :residence_address, :string
     add_column :users, :sex, :integer, :limit => 3
+    add_column :users, :status, :integer, :limit => 3, :default => SettingsConfig::DISABLED
   end
 end
+

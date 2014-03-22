@@ -1,0 +1,1 @@
+if (!window.jQuery) { document.write('<script src="js/libs/jquery-2.0.2.min.js"><\/script>');} 

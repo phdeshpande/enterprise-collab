@@ -1,0 +1,42 @@
+<% content_for :quick_snap do %>
+  <%= render :partial => "quick_snap", :locals => { :users => @users } %>
+<% end %>
+
+<div class="row">
+  <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sortable-grid ui-sortable">
+    <div id="wid-id-0" class="jarviswidget jarviswidget-color-darken jarviswidget-sortable">
+      <header role="heading">
+        <div class="jarviswidget-ctrls" role="menu">  
+         <a data-placement="bottom" title="" rel="tooltip" class="button-icon jarviswidget-toggle-btn" href="#" data-original-title="Collapse"><i class="fa fa-minus "></i></a> 
+         <a data-placement="bottom" title="" rel="tooltip" class="button-icon jarviswidget-fullscreen-btn" href="javascript:void(0);" data-original-title="Fullscreen"><i class="fa fa-resize-full "></i></a> 
+         <a data-placement="bottom" title="" rel="tooltip" class="button-icon jarviswidget-delete-btn" href="javascript:void(0);" data-original-title="Delete"><i class="fa fa-times"></i></a>
+        </div>
+
+        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+        <h2>Users</h2>
+
+        <span class="jarviswidget-loader"><i class="fa fa-refresh fa-spin"></i></span>
+      </header>
+      <div role="content">
+
+          <!-- widget edit box -->
+          <div class="jarviswidget-editbox">
+            <!-- This area used as dropdown edit box -->
+
+          </div>
+          <!-- end widget edit box -->
+
+          <!-- widget content -->
+          <div id="widget-content" class="widget-body">
+            <%= render "index", :locals => {:users => @users} %>
+
+          </div> <!-- ENDs widget-content -->
+
+        </div>
+
+    </div>
+  </article>
+
+</div>
+
+

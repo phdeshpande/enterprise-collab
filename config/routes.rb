@@ -1,9 +1,21 @@
-EnterpriseCollab::Application.routes.draw do
+  EnterpriseCollab::Application.routes.draw do
   
   # devise_scope :user do
     # match "users/sign_in" => "home#index", :via => [:get, :post]
   # end  
   devise_for :users, :controllers => {:registrations => "users/registrations"}
+  authenticated :user do
+    resources :users
+    post "users/new_user_create" => "users#new_user_create"
+    # post "/users/update" => "users#update"
+  end
+
+  # resources :users do
+  #   member do
+  #     get 'add'
+  #   end
+  # end
+
   resources :dashboard
   resources :spaces
 
@@ -13,6 +25,8 @@ EnterpriseCollab::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+  
+  # get "users/new_user" => "users#new_user"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

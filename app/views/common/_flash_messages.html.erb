@@ -2,7 +2,8 @@
   <% flash_class = (key == :alert) ? "danger" : "success"  %>
 <div id="flash-message" class="alert alert-<%= flash_class %> fade in col-sm-9">
   <button data-dismiss="alert" class="close">×</button>
-  <i class="fa-fw fa fa-times"></i>
+   <% icon = "fa-thumbs-o-down" %>
+  <i class="fa-fw fa fa-exclamation-triangle"></i>
   <strong><%= key.capitalize %>!</strong> <%= value.html_safe %>
 </div>
 <% end %>

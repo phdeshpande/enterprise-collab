@@ -1,0 +1,105 @@
+<% 
+# url = {:controller => controller_name }
+if @user.id.blank? 
+  path = users_new_user_create_path(@user)
+else
+  path = {:controller => controller_name, :action => "update", :id => @user }
+  # url[:id] = @user.id
+end
+# url[:action] = path
+%>
+<%= form_for(@user, :as => :users, :url => path, :html => {:class => "smart-form"}, :remote => true) do |f| %>
+  <fieldset>
+    <div class="row">
+      <section class="col col-6">
+        <%= wrap_input_field("#{f.text_field :first_name, :'placeholder' => 'First Name'}", "fa fa-user") %>
+      </section>
+      <section class="col col-6">
+        <%= wrap_input_field("#{f.text_field :last_name, :'placeholder' => 'Last Name'}", "fa fa-user") %>
+      </section>
+    </div>
+
+    <div class="row">
+      <section class="col col-6">
+        <%= wrap_input_field("#{f.text_field :email, :'placeholder' => 'Email ID'}", "fa fa-envelope-o") %>
+      </section>
+      <section class="col col-6">
+      <%= wrap_input_field("#{f.text_field :mobile_number, :'placeholder' => 'Mobile Number', 'data-mask' => '(999) 999-9999'}", "fa fa-phone") %>
+      </section>
+    </div>
+    </fieldset>
+
+    <fieldset>
+    <div class="row">
+      <section class="col col-6">
+        <%= wrap_input_field("#{f.text_field :password, :'placeholder' => 'Password'}", "fa fa-lock") %>
+      </section>
+      <section class="col col-6">
+        <%= link_to "Generate Password", "#", :class => "btn btn-sm btn-primary" %>
+      </section>
+    </div>
+    </fieldset>
+
+    <fieldset>
+    <div class="row">
+      <section class="col col-4">
+        <label class="label">Date of Birth </label>
+        <div class="input-group pull-left">
+          <%= wrap_input_field("#{f.text_field :dob, :'placeholder' => 'DD/MM/YYYY', :class=>"form-control datepicker hasDatepicker"}", "") %>
+          <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+        </div>
+      </section>
+      <section class="col col-2">
+        <label class="toggle pull-left">
+        <label class="label">Sex</label>
+          <input type="checkbox" checked="checked" name="checkbox-toggle">
+          <i data-swchoff-text="FEMALE" data-swchon-text="MALE"></i>
+        </label>
+        
+        <p class="clearfix"></p> <br/>
+        
+        <span> <span class="onoffswitch-title">Active Status</span> <span class="onoffswitch">
+        <%= f.check_box "status", {class: 'onoffswitch-checkbox'}, 1, 0 %>
+          <!--<input type="checkbox" id="start_interval" class="onoffswitch-checkbox" name="start_interval"> -->
+          <label for="users_status" class="onoffswitch-label"> <div data-swchoff-text="OFF" data-swchon-text="ON" class="onoffswitch-inner"></div> <div class="onoffswitch-switch"></div> </label> </span> 
+        </span>
+
+      </section>
+    </div>
+    </fieldset>
+
+    <fieldset>
+      <div class="row">
+      <section class="col col-6">
+        <label class="label">Residence Address</label>
+        <%= wrap_input_field("#{f.text_area :residence_address, :class => 'col-md-8'}", "") %>
+      </section>
+    </div>
+    </fieldset>
+
+
+
+    <footer>
+      <%= f.submit :class => "btn bg-color-green txt-color-white" %> 
+    </footer>
+
+<% end %>
+
+
+<script type="text/javascript">
+  if ($('.datepicker')
+        .length) {
+        $('.datepicker')
+            .each(function () {
+
+                $this = $(this);
+                var dataDateFormat = $this.attr('data-dateformat') || 'dd.mm.yy';
+
+                $this.datepicker({
+                    dateFormat: dataDateFormat,
+                    prevText: '<i class="fa fa-chevron-left"></i>',
+                    nextText: '<i class="fa fa-chevron-right"></i>',
+                });
+            })
+    }
+</script>

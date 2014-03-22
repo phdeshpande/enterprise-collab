@@ -1,0 +1,39 @@
+<table class="table table-bordered ">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Created at</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% active_users = 0 %>
+  <% if users.blank? %>
+    <tr>
+      <td colspan="3" class="text-center text-muted">NOTHING FOUND!</td>
+    </tr>
+  <% else %>
+    <% users.each do |r| %>
+      <tr>
+        <td>
+          <%= r['first_name']+" "+r['last_name'] %>
+          <code><%= SettingsConfig::STATUS[r['status']] %></code>
+        </td>
+        <td><%= r['email'] %></td>
+        <td><%= CommonUtils.date_format(r['created_at'], "date") %></td>
+        <td><%= link_to "Edit", edit_user_path(r), :remote => true if is_admin? %></td>
+      </tr>
+      <% active_users = (active_users + 1) if enabled?(r['status']) %>
+      <% end %>
+  <% end %>
+  </tbody>
+</table>
+
+
+<script type="text/javascript">
+  $(document).ready( function () {
+    init(<%= (active_users*100)/users.size %>);
+  });
+
+</script>

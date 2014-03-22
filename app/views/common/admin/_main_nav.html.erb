@@ -18,6 +18,9 @@
         <%= link_to '<i class="fa fa-lg fa-fw fa-list-alt"></i>  <span class="menu-item-parent">Departments</span>'.html_safe, ""  %>
       </li>
       <li>
+         <%= link_to '<i class="fa fa-lg fa-fw fa-user"></i> Users'.html_safe, users_path  %>
+      </li>
+      <li>
         <%= link_to '<i class="fa fa-lg fa-fw fa-table"></i>  <span class="menu-item-parent">Timeline</span>'.html_safe, ""  %>
       </li>
       <li>
@@ -28,6 +31,23 @@
       </li>
       <li>
         <%= link_to '<i class="fa fa-lg fa-fw fa-bar-chart-o"></i>  <span class="menu-item-parent">Reports</span>'.html_safe, ""  %>
+      </li>
+      <li>
+        <%= link_to '<i class="fa fa-lg fa-fw fa-windows"></i>  <span class="menu-item-parent">Administration</span>'.html_safe, "#"  %>
+        <ul>
+          <li>
+             <%= link_to '<i class="fa fa-lg fa-fw fa-globe"></i> Organization'.html_safe, ""  %>
+          </li>
+          <li>
+             <%= link_to '<i class="fa fa-lg fa-fw fa-lock"></i> Roles &amp; Privileges'.html_safe, ""  %>
+          </li>
+          <li>
+             <%= link_to '<i class="fa fa-lg fa-fw fa-group"></i> Groups'.html_safe, ""  %>
+          </li>
+          <li>
+             <%= link_to '<i class="fa fa-lg fa-fw fa-user"></i> Users'.html_safe, "#"  %>
+          </li>
+        </ul>
       </li>
       <li>
         <%= link_to '<i class="fa fa-lg fa-fw fa-windows"></i>  <span class="menu-item-parent">Utilities</span>'.html_safe, "#"  %>
