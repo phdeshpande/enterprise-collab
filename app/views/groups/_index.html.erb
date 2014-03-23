@@ -1,0 +1,10 @@
+<div>
+  <div class="pull-left">Lists all users.</div>
+  <div class="pull-right">
+    <%= link_to "<i class='glyphicon glyphicon-plus'></i> Add Group".html_safe, new_group_path, {:remote => true, :class=>"btn btn-info btn-sm"} if is_admin? %>
+  </div>
+</div>
+
+<p class="clearfix"></p>
+
+<%= render :partial => "list", :locals => { :groups => groups } %>

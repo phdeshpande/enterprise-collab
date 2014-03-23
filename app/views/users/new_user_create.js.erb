@@ -1,4 +1,4 @@
-$('#error_div').html("<%= escape_javascript(render 'common/flash_messages') %>");
+$('#flash-messages').html("<%= escape_javascript(render 'common/flash_messages') %>");
 <% if flash[:alert].blank? %>
   $('#widget-content').html("<%= escape_javascript(render 'users/list',:users => @users) %>")
 <% else %>

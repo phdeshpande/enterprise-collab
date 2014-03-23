@@ -1,12 +1,12 @@
 <% content_for :quick_snap do %>
-  <%= render :partial => "quick_snap", :locals => { :users => @users } %>
+  <%= render :partial => "quick_snap", :locals => { :groups => @groups } %>
 <% end %>
 
 <div class="row">
   <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sortable-grid ui-sortable">
     <div id="wid-id-0" class="jarviswidget jarviswidget-color-darken jarviswidget-sortable">
       <header role="heading">
-        <%= render :partial => "common/admin/widget_title", :locals => {:title => "Users"} %>
+        <%= render :partial => "common/admin/widget_title", :locals => {:title => "Groups"} %>
       </header>
       <div role="content">
 
@@ -19,7 +19,7 @@
 
           <!-- widget content -->
           <div id="widget-content" class="widget-body">
-            <%= render "index", :locals => {:users => @users} %>
+            <%= render :partial => "index", :locals => {:groups => @groups} %>
 
           </div> <!-- ENDs widget-content -->
 

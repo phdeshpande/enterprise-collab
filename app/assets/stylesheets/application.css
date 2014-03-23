@@ -10,8 +10,8 @@
  *
  *= require_self
  * require datepicker
- *= require smartadmin
  *= require global
+ *= require smartadmin
  *= require admin
  * require_tree .
  */

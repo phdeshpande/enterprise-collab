@@ -2,8 +2,9 @@
   <span id="logo"><%= link_to image_tag("smartadmin/logo.png"), root_path %></span>
 </div>
 
-<%= render "common/flash_messages", :locals => {flash => flash } %>
-
+<div id="flash-messages">
+  <%= render "common/flash_messages", :locals => {flash => flash } %>
+</div>
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
 <span id="login-header-space"> 
   <h4 class="hidden-mobile">Need an account?</h4> 

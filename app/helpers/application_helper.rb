@@ -43,9 +43,21 @@ module ApplicationHelper
     end 
   end
 
-  ###############
+
+  #######################################################################################
+  # Form Helper Methods
+  #######################################################################################
+
+  # Build User select options
+  # @params UserObject
+  # @returns Array
+  def options_for_user_select(object)
+    object.collect { |r| [r.name, r.id] }
+  end
+
+  ###########################################################################
   # Privileges
-  ###############
+  ###########################################################################
   def is_admin?
     current_user.is_admin
   end

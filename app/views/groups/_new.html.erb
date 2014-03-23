@@ -1,0 +1,10 @@
+<div>
+  <div class="pull-left">Create a New Group</div>
+  <div class="pull-right">
+    <%= link_to "<i class='fa fa-reorder'></i> List".html_safe, groups_path, {:class=>"btn btn-info btn-sm"} %>
+  </div>
+</div>  
+
+<p class="clearfix"></p>
+
+<%= render :partial => "form", :locals => { :groups => @groups, :users => @users } %>

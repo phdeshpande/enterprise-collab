@@ -16,7 +16,6 @@ class UsersController < ApplicationController
     @user = User.create_user(user_params, current_user.account_id) # New User
     begin
       @user.save!
-      binding.pry
       @users = User.get_all(current_user.account_id)
       flash[:success] = "User was created successfully!"
     rescue => e
