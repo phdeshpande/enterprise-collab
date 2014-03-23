@@ -7,6 +7,7 @@ EnterpriseCollab::Application.routes.draw do
   resources :dashboard
   resources :spaces
   resources  :groups
+  resources :standups
 
   # get "/register" => 'home#register'
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,2 @@
+module StandupsHelper
+end

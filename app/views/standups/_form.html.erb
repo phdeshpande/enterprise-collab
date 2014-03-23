@@ -1,0 +1,43 @@
+<%= form_for(@standup) do |f| %>
+  <% if @standup.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@standup.errors.count, "error") %> prohibited this standup from being saved:</h2>
+
+      <ul>
+      <% @standup.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+  <%= f.label :task_name %><br>
+  <%= f.text_field :task_name %>
+  </div>
+
+  <div class="field">
+  <%= f.label :space %><br>
+  <%= f.text_field :space_id %>
+  </div>
+
+  <span class="field">
+  <%= f.label :ETA %><br>
+  <%= f.time :eta %>
+  </span>
+
+  <span class="field">
+  <%= f.label :Actual_time %><br>
+  <%= f.time :actual_time %>
+  </span>
+
+
+
+  <div class="field">
+  <%= f.label :comments %><br>
+  <%= f.text_area :comments %>
+  </div>
+
+  <div class="actions">
+  <%= f.submit %>
+<% end %>
