@@ -1,0 +1,32 @@
+<%= form_for(@group, :html => {:class => "smart-form"}, :remote => true) do |f| %>
+  <fieldset>
+    <section>
+      <label class="label"><strong>What would like to name your Group?</strong></label>
+      <label class="input">
+          <%= wrap_input_field("#{f.text_field :name, :'placeholder' => 'Group Name'}", "fa fa-group") %>
+      </label>
+    </section>
+
+    <section>
+      <label class="label"><strong>Write some Description for your group</strong></label>
+      <label class="textarea">
+          <%= wrap_input_field("#{f.text_area :description, :class => 'col-md-12' }", "") %>
+      </label>
+    </section>
+  </fieldset>
+  <fieldset>
+    <section>
+      <label class="label"><strong>Choose Owner</strong></label>
+      <label class="select">
+          <%= wrap_input_field("#{f.select :user_id, options_for_user_select(users), :class => 'select' }", "") %>
+          <i></i>
+      </label>
+    </section>
+
+  </fieldset>
+
+   <footer>
+      <%= f.submit :class => "btn bg-color-green txt-color-white" %> 
+    </footer>
+
+<% end %>

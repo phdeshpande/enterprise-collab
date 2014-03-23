@@ -1,0 +1,6 @@
+$('#flash-messages').html("<%= escape_javascript(render 'common/flash_messages') %>");
+<% if flash[:alert].blank? %>
+  $('#widget-content').html("<%= escape_javascript(render 'groups/index',:groups => @groups) %>")
+<% else %>
+  $('#widget-content').html("<%= escape_javascript(render 'groups/form',:group => @group) %>")
+<% end %>

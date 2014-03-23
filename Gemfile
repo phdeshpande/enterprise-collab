@@ -26,6 +26,7 @@ gem 'therubyracer'
 
 gem 'devise'
 gem 'httparty'
+gem 'userstamp', :git => 'git://github.com/kimkong/userstamp.git'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

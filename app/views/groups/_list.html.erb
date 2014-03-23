@@ -1,0 +1,43 @@
+<% active_groups = 0 %>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Owner</th>
+      <th>Created At</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody> 
+  <% if groups.blank? %>
+    <tr>
+      <td colspan="5" class="text-center text-muted">NOTHING FOUND!</td>
+    </tr>
+  <% else %>
+    <% groups.each do |r| %>
+      <tr>
+        <td>
+          <%= r['name'] %><code><%= SettingsConfig::STATUS[r['status']] %></code>
+        </td>
+        <td><%= r['description'] %></td>
+        <td><%= r.user.name %></td>
+        <td><%= CommonUtils.date_format(r['created_at'], "date") %></td>
+        <td><%= link_to "Edit", edit_group_path(r), :remote => true if is_admin? %></td>
+      </tr>
+      <% active_groups = (active_groups + 1) if enabled?(r['status']) %>
+      <% end %>
+  <% end %>
+  </tbody>
+</table>
+
+<% stat_count = groups.blank? ? 0 : (active_groups*100)/groups.size %>  
+
+<script type="text/javascript">
+// Update Active Statistics Count
+  $(document).ready( function () {
+    init(<%= stat_count %>);
+  });
+
+</script>

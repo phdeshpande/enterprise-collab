@@ -30,10 +30,11 @@
   </tbody>
 </table>
 
+<% stat_count = users.blank? ? 0 : (active_users*100)/users.size %>  
 
 <script type="text/javascript">
   $(document).ready( function () {
-    init(<%= (active_users*100)/users.size %>);
+    init(<%= stat_count %>);
   });
 
 </script>
