@@ -18,7 +18,10 @@
 
   resources :dashboard
   resources :spaces
+  get "spaces/milestones/:id/:filter" => "spaces#milestones"
+
   resources :groups
+  resources :standup_reports
 
   # get "/register" => 'home#register'
   # The priority is based upon order of creation: first created -> highest priority.

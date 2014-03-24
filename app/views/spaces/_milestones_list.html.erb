@@ -1,0 +1,39 @@
+<% completed_milestones  = 0 %>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Due Date</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+  <tbody> 
+  <% if milestones.blank? %>
+    <tr>
+      <td colspan="5" class="text-center text-muted">NOTHING FOUND!</td>
+    </tr>
+  <% else %>
+    <% milestones.each do |r| %>
+      <tr>
+        <td>
+          <%= r['title'] %><code><%= SettingsConfig::STATUS[r['status']] %></code>
+        </td>
+        <td><%= r['description'] %></td>
+        <td><%= CommonUtils.date_format(r['due_date']) %></td>
+        <td><%= CommonUtils.date_format(r['created_at']) %></td>
+      </tr>
+      <%= completed_milestones = completed_milestones + 1 if r['is_completed'] %>
+      <% end %>
+  <% end %>
+  </tbody>
+</table>
+
+<% stat_count = completed_milestones.blank? ? 0 : (completed_milestones*100)/milestones.size %>  
+
+<script type="text/javascript">
+// Update Active Statistics Count
+  $(document).ready( function () {
+    init(<%= stat_count %>);
+  });
+</script>

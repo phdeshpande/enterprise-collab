@@ -1,0 +1,33 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Created at</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% active_spaces = 0 %>
+  <% if spaces.blank? %>
+    <tr>
+      <td colspan="3" class="text-center text-muted">NOTHING FOUND!</td>
+    </tr>
+  <% else %>
+    <% spaces.each do |s| %>
+      <tr>
+        <td><%= link_to s['name'], :controller => "spaces", :action => "milestones", :id => s["id"], :filter => "all" %></td>
+        <td><%= CommonUtils.date_format(s['created_at'], "date") %></td>
+        <td><%= SettingsConfig::STATUS[s['status']] %></td>
+      </tr>
+      <% active_spaces = (active_spaces + 1) if enabled?(s['status']) %>
+      <% end %>
+  <% end %>
+  </tbody>
+</table>
+
+<script type="text/javascript">
+  $(document).ready( function () {
+    init(<%= (active_spaces*100)/@spaces.size %>);
+  });
+
+</script>

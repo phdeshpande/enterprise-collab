@@ -1,0 +1,28 @@
+<table class="table table-striped table-hover">
+  <tr>
+    <th></th>
+    <th>Task Name</th>
+    <th>Description</th>
+    <th>Space</th>
+    <th>Task Category</th>
+    <th>ETA</th>
+  </tr>
+  <% if standup.blank? %>
+  <tr>
+    <td colspan="5" class="center"><%= link_to "Create Standup Report", new_standup_report_path, :class => "btn btn-sm btn-success" %><td>
+  </tr>
+  <% else %>
+    <% standup.each do |r| %>
+    <tr>
+      <td><%= r.name %><td>
+      <td><%= r.description %><td>
+      <td><%= r.space_id %><td>
+      <td><%= r.category_id %><td>
+      <td><%= r.eta %><td>
+    </tr>
+    <% end %>
+  <% end %>
+
+</table>
+
+

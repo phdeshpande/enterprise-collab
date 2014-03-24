@@ -1,12 +1,12 @@
 <% content_for :quick_snap do %>
- <%= render :partial => "quick_snap", :locals => { :label => "Spaces", :stat_count => @spaces.size } %>
+  <%#= render :partial => "quick_snap", :locals => { :standup => @standup } %>
 <% end %>
 
 <div class="row">
   <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sortable-grid ui-sortable">
     <div id="wid-id-0" class="jarviswidget jarviswidget-color-darken jarviswidget-sortable">
       <header role="heading">
-        <%= render :partial => "common/admin/widget_title", :locals => {:title => "Spaces"} %>
+        <%= render :partial => "common/admin/widget_title", :locals => {:title => "StandUp Report"} %>
       </header>
       <div role="content">
 
@@ -18,10 +18,10 @@
           <!-- end widget edit box -->
 
           <!-- widget content -->
-          <div class="widget-body">
-            <%= render :partial => "index", :locals => { :spaces => @spaces }  %>
-          </div>
-          <!-- end widget content -->
+          <div id="widget-content" class="widget-body">
+            <%= render :partial => "index", :locals => {:standup => @standup} %>
+
+          </div> <!-- ENDs widget-content -->
 
         </div>
 
@@ -29,3 +29,5 @@
   </article>
 
 </div>
+
+
