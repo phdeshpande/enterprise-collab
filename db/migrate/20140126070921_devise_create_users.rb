@@ -32,6 +32,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       t.references :account
 
+      t.userstamps
       t.timestamps
     end
 

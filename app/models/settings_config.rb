@@ -4,7 +4,7 @@ module SettingsConfig
   DISABLED = 0
 
   # FORMATS
-  DATE_FORMAT = "dd-mm-yy"
+  DATE_FORMAT = "%d-%m-%Y %H:%M:%S"
 
   STATUS = { ENABLED => "Active", DISABLED => "In-Active"}
   TASK_STATUS = { "Pending" => 1, "Progress" => 2, "Hold" => 3, "Done" => 4 }

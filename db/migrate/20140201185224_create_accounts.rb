@@ -18,6 +18,7 @@ class CreateAccounts < ActiveRecord::Migration
       
       # Visibility
       t.integer :status, :limit => 3, :default => SettingsConfig::DISABLED
+      t.userstamps
     end
   end
 end
