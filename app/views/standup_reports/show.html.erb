@@ -1,0 +1,31 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h4 class="modal-title">Showing Task: <%= @standup.task_name %>  </h4>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-sm-3">Priority: <%= display_priority(@standup.priority) %></div>
+        <div class="col-sm-3">Status: <%= display_task_status(@standup.status) %></div>
+        <div class="col-sm-3">ETA: <%= @standup.eta %> hrs</div>
+        <div class="col-sm-3">Actual Time: <%= @standup.actual_time %> hrs</div>
+      </div>
+      <div class="row bordertop margintop">
+        <div class="col-sm-6">Space: <span class="label label-info"><%= @standup.space_id %></span></div>
+        <div class="col-sm-6">Category: <span class="badge badge-info"><%= @standup.space_id %></span></div>
+      </div>
+
+      <div class="row margintop22">
+        <div>Task Description:</div>
+        <%= @standup.description %>
+      </div>
+
+      <div class="row margintop22">
+        <div>Comments:</div>
+        <%= @standup.comments %>
+      </div>
+
+    </div>
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

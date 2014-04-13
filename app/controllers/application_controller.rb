@@ -21,19 +21,4 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << [:first_name, :last_name]
   end
 
-  # Calls assembla API
-  # @params: api(string)
-  # @return: json(success), nil(error)
-  def callAPI(api)
-    uri = AppConfig::pm_config['url']+'/'+AppConfig::pm_config['version']+'/'+api
-    request_data  = HTTParty.get(uri, :headers => { 'Content-Type' => 'application/json', 'Accept' => 'application/json', 
-                  "X-Api-Key" => AppConfig::pm_config['api_key'], "X-Api-Secret" => AppConfig::pm_config['api_secret_key']} )
-    if request_data.response.code != "200"
-      # flash[:alert] = request_data.response.code + " - " + request_data.response.message
-      raise "Something went wrong"
-      Rails.logger("API call failed to #{uri}. Response returned is #{request_data.response.code} - request_data.response.message")
-    end
-    request_data
-  end  
-
 end

@@ -1,0 +1,101 @@
+<%= form_for(@standup, :html => {:class => "form-horizontal"}, :remote => true) do |f| %>
+<div class="modal-body">
+
+<div id="modal-flash-messages">
+  <%= render "common/flash_messages", :locals => {flash => flash } %>
+</div>
+
+<fieldset>
+ <div class="col-md-6">
+    <div class="form-group">
+    <label for="textarea" class="col-md-4 control-label">Task Name</label>
+    <div class="col-md-8">
+      <%= wrap_input_field("#{f.text_field :task_name, :class => 'form-control'}", "") %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="textarea" class="col-md-4 control-label">Description</label>
+    <div class="col-md-8">
+      <%= wrap_input_field("#{f.text_area :description, :class => 'form-control'}", "") %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="textarea" class="col-md-4 control-label">Space</label>
+    <div class="col-md-8">
+    <%= wrap_input_field("#{f.select :space_id, options_for_space_select(spaces), :class => 'select form-control' }", "") %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="textarea" class="col-md-4 control-label">Category</label>
+    <div class="col-md-8">
+    <%= wrap_input_field("#{f.select :category_id, SettingsConfig::TASK_CATEGORIES, :class => 'select form-control' }", "") %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="textarea" class="col-md-4 control-label">Comments</label>
+    <div class="col-md-8">
+      <%= wrap_input_field("#{f.text_area :comments, :class => 'form-control'}", "") %>
+    </div>
+  </div>
+
+ </div>
+
+ <div class="col-md-6">
+    <div class="form-group">
+      <label for="textarea" class="col-md-4 control-label">Priority</label>
+      <div class="col-md-8">
+      <%= wrap_input_field("#{f.select :priority, SettingsConfig::TASK_PRIORITY, :class => 'select form-control' }", "") %>
+      </div>
+    </div>
+
+   <div class="form-group">
+      <label for="textarea" class="col-md-4 control-label">Status</label>
+      <div class="col-md-8">
+      <%= wrap_input_field("#{f.select :status, SettingsConfig::TASK_STATUS, :class => 'select form-control' }", "") %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="textarea" class="col-md-4 control-label">ETA</label>
+      <div class="input-group">
+        <!-- <input type="text" placeholder="Select time" id="timepicker" class="form-control">
+        <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+      </div> -->
+      <div class="col-md-8">
+        <%= wrap_input_field("#{f.text_field :eta, :placeholder => "0.0", :class => 'form-control'}", "") %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="textarea" class="col-md-4 control-label">Actual Time</label>
+      <div class="col-md-8">
+        <%= wrap_input_field("#{f.text_field :actual_time, :placeholder => "0.0", :class => 'form-control'}", "") %>
+      </div>
+    </div>
+ </div>
+
+</fieldset>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  <%= f.submit :class => "btn bg-color-green txt-color-white" %> 
+</div>
+
+<% end %>
+
+<script type="text/javascript">
+  /*
+* TIMEPICKER
+*/
+//Load time picker script
+//loadScript("js/plugin/bootstrap-timepicker/bootstrap-timepicker.min.js", runTimePicker);
+// runTimePicker();
+// function runTimePicker() {
+//   $('#timepicker').timepicker();
+// } 
+</script>

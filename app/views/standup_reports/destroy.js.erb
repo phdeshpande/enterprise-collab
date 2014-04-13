@@ -1,0 +1,2 @@
+$('#flash-message').html("<%= escape_javascript(render 'common/flash_messages') %>");
+$('#col-1').html("<%= escape_javascript(render 'standup_reports/list',:standup => @standup) %>")

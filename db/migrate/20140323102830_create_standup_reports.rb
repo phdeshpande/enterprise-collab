@@ -5,8 +5,10 @@ class CreateStandupReports < ActiveRecord::Migration
       t.text    :description, :limit => 500
       t.integer :space_id
       t.integer :category_id
-      t.time    :eta
-      t.time    :actual_time
+      t.integer :account_id
+      t.integer :priority
+      t.float    :eta
+      t.float    :actual_time
       t.string  :comments
       t.integer :status, :limit => 3, :default => SettingsConfig::TASK_STATUS["Pending"]
 

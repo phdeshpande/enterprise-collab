@@ -1,0 +1,21 @@
+<% if flash[:alert].blank? %>
+  $('#EModal').modal('hide');
+// $('#FModal').modal({
+//   'data-dismiss': true
+  // 'show': false
+  // $('').class = "modal-backdrop fade";
+  // alert($( "div.modal-backdrop fade in" ).hasClass("fade in"));
+  $( "div.modal-backdrop fade in" ).removeClass('in');
+// })
+
+  // $('#FModal').modal({
+  //   hide: true
+  // })
+
+
+  $('#col-1').html("<%= escape_javascript(render 'standup_reports/list',:standup_tasks => @standup_tasks) %>")
+  $('#flash-messages').html("<%= escape_javascript(render 'common/flash_messages') %>");
+<% else %>
+  $('#modal-flash-messages').html("<%= escape_javascript(render 'common/flash_messages') %>");
+  $('#modal-content').html("<%= escape_javascript(render 'standup_reports/form',:standup => @standup, :spaces => @spaces) %>")
+<% end %>

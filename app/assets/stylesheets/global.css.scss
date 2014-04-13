@@ -5,4 +5,13 @@
   QUICK-STYLES
 ******************************************************************************************/
 .bold{font-weight: bold;}
+.bordertop{border-top: 1px solid #DDDDDD;}
 .center{text-align: center;}
+.strikeoff{
+  text-decoration: line-through;
+  a{@extend .text-success;}
+}
+.margintop{margin-top: 10px;}
+.marginbottom{margin-bottom: 10px;}
+.margintop22{margin-top: 22px;}
+.pad5{padding: 5px;}

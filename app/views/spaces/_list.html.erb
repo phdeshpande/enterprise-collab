@@ -25,9 +25,11 @@
   </tbody>
 </table>
 
+<% stat_count = spaces.blank? ? 0 : (active_spaces*100)/spaces.size %>  
+
 <script type="text/javascript">
   $(document).ready( function () {
-    init(<%= (active_spaces*100)/@spaces.size %>);
+    init(<%= stat_count %>);
   });
 
 </script>

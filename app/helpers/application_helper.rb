@@ -27,6 +27,20 @@ module ApplicationHelper
     return (status == SettingsConfig::ENABLED)
   end
 
+  # Check if task is in DONE status
+  # @param Integer
+  # @return Bool
+  def task_done?(status)
+    return SettingsConfig::TASK_STATUS.key?(status) == "Done"
+  end
+
+  # Check if priority is High/Highest
+  # @param String
+  # @return Bool
+  def is_high_priority(priority)
+    priority.downcase.include?("high")
+  end
+
   ###############################################################################
   # TBootstrap Helper Methods
   ###############################################################################
@@ -53,6 +67,13 @@ module ApplicationHelper
   # @returns Array
   def options_for_user_select(object)
     object.collect { |r| [r.name, r.id] }
+  end
+
+  # Build Space select options
+  # @params SpaceHTTPPartyResponse
+  # @returns Array
+  def options_for_space_select(object)
+    object.collect { |r| [r['name'], r['id']] }
   end
 
   ###########################################################################

@@ -1,0 +1,10 @@
+<% if flash[:alert].blank? %>
+  // <script type="text/javascript">
+    $('#FModal').modal('hide');
+  // </script>
+  $('#col-1').html("<%= escape_javascript(render 'standup_reports/list',:standup_tasks => @standup_tasks) %>")
+  $('#flash-messages').html("<%= escape_javascript(render 'common/flash_messages') %>");
+<% else %>
+  $('#modal-flash-messages').html("<%= escape_javascript(render 'common/flash_messages') %>");
+  $('#modal-content').html("<%= escape_javascript(render 'standup_reports/form',:standup => @standup, :spaces => @spaces) %>")
+<% end %>

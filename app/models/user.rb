@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   belongs_to :account
+  has_many   :standup_reports
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

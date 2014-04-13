@@ -2,8 +2,7 @@ class SpacesController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    api = 'spaces' # Space URI    
-    @spaces = callAPI(api)
+    @spaces = ApiTalk::Space.getSpaces
   end
 
   # List Milestones based on space ID & filters passed as per Assembla API ref
@@ -11,7 +10,7 @@ class SpacesController < ApplicationController
   def milestones
     milestone_api = "spaces/#{params[:id]}/milestones/#{params[:filter]}" # All Milestones
     space_api = "spaces/#{params[:id]}"
-    @milestones = callAPI(milestone_api)
-    @space = callAPI(space_api)
+    @milestones = ApiTalk::callAPI(milestone_api)
+    @space = ApiTalk::Space.getSpaces(space_api)
   end
 end

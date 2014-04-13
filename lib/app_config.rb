@@ -15,6 +15,6 @@ class AppConfig
 
   def self.pm_config
     self.config['pm_config']
-  end  
+  end
     
 end
