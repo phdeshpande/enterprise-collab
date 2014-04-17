@@ -8,4 +8,13 @@ class AccountsController < ApplicationController
   #   # render :text => "Add User", :layout => "application"
   # end  
 
+  def edit
+    
+  end
+
+  # List all Cron tasks
+  def cron_tasks
+    
+  end
+
 end

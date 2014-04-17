@@ -10,6 +10,10 @@
     # post "/users/update" => "users#update"
   end
 
+  resources :accounts
+  # get "/accounts/edit/:id" => "accounts#cron_tasks"
+  # get "/accounts/cron_tasks" => "accounts#cron_tasks"
+
   # resources :users do
   #   member do
   #     get 'add'

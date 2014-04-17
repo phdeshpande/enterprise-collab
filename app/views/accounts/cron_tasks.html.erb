@@ -1,0 +1,30 @@
+<div class="row">
+  <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sortable-grid ui-sortable">
+    <div id="wid-id-0" class="jarviswidget jarviswidget-color-darken jarviswidget-sortable">
+      <header role="heading">
+        <%= render :partial => "common/admin/widget_title", :locals => {:title => "Cron Tasks"} %>
+      </header>
+      <div role="content">
+
+          <!-- widget edit box -->
+          <div class="jarviswidget-editbox">
+            <!-- This area used as dropdown edit box -->
+
+          </div>
+          <!-- end widget edit box -->
+
+          <!-- widget content -->
+          <div id="widget-content" class="widget-body">
+            <div>If Cron is not running run these tasks manually based on their frequency.</div>
+            <ul class="list-group">
+              <li class="list-group-item"><%= link_to '<i class="fa fa-lg fa-fw fa-cog"></i>  <span class="menu-item-parent">Send-out StandUp Reports</span>'.html_safe, "#"  %></li>
+            </ul>
+
+          </div> <!-- ENDs widget-content -->
+
+        </div>
+
+    </div>
+  </article>
+
+</div>

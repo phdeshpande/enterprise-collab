@@ -35,9 +35,11 @@
       <li>
         <%= link_to '<i class="fa fa-lg fa-fw fa-windows"></i>  <span class="menu-item-parent">Administration</span>'.html_safe, "#"  %>
         <ul>
+          <% if is_admin? %>
           <li>
-             <%= link_to '<i class="fa fa-lg fa-fw fa-globe"></i> Organization'.html_safe, ""  %>
+             <%= link_to '<i class="fa fa-lg fa-fw fa-globe"></i> Organization'.html_safe, edit_account_path(current_user.account_id)  %>
           </li>
+          <% end %>
           <li>
              <%= link_to '<i class="fa fa-lg fa-fw fa-lock"></i> Roles &amp; Privileges'.html_safe, ""  %>
           </li>
@@ -52,8 +54,7 @@
       <li>
         <%= link_to '<i class="fa fa-lg fa-fw fa-windows"></i>  <span class="menu-item-parent">Utilities</span>'.html_safe, "#"  %>
         <ul>
-          <li><a href="ajax/typography.html">Typography</a></li>
-          <li><a href="ajax/typography.html">Typography</a></li>
+          <li><%= link_to '<i class="fa fa-lg fa-fw fa-cog"></i> Cron Tasks'.html_safe, "/accounts/cron_tasks"  %></li>
         </ul>
       </li>
     </ul>
