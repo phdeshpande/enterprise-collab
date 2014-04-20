@@ -13,8 +13,8 @@ pm_config:
   url: 'https://api.assembla.com'
   version: 'v1'
   response_type: 'json'
-  api_key: 'e8f033bf68124b93a4c2' #'d7e21aed516e2b257a7f'
-  api_secret_key: '5f7356bf3088b7e759762aa48c391726d1c6e2d8' #'0d058ac99c797210b62a28a7a93c24f25df52136'
+  api_key: 'd7e21aed516e2b257a7f'
+  api_secret_key: '0d058ac99c797210b62a28a7a93c24f25df52136'
 
 # api_key: 'e8f033bf68124b93a4c2'
 # api_secret_key: '5f7356bf3088b7e759762aa48c391726d1c6e2d8'
