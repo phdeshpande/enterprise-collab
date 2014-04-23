@@ -44,6 +44,21 @@ class GroupsController < ApplicationController
     end
   end
 
+  def destroy
+   @group=Group.where(:id=>params[:id]).first
+   begin
+    @group.destroy
+    @groups=Group.get_all(current_user.account_id)
+    flash[:succes] = "Group deleted successfully!"
+    rescue 
+      @users = User.get_all(current_user.account_id)
+      flash[:alert] = "There was a problem in deleting the group"
+    end
+    respond_to do |format|
+      format.html { redirect_to groups_url }
+      format.json { head :no_content }
+    end
+  end
   ###############################################################################################################
   private
   ###############################################################################################################
