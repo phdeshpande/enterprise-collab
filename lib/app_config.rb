@@ -13,6 +13,10 @@ class AppConfig
     self.config['environment']['local_server']
   end
 
+  def self.app
+    self.config['app']
+  end
+
   def self.pm_config
     self.config['pm_config']
   end

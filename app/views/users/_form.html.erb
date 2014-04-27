@@ -9,6 +9,16 @@ end
 # url[:action] = path
 %>
 <%= form_for(@user, :as => :users, :url => path, :html => {:class => "smart-form"}, :remote => true) do |f| %>
+  
+  <fieldset>
+    <div class="row">
+      <section class="col col-6">
+        Link your <code><%= AppConfig.pm_config['tool_name'] %></code> user account to <code><%= AppConfig.app['name'] %></code>
+        <%= wrap_input_field("#{f.text_field :pm_user_id_key, :'placeholder' => ''}", "fa fa-cog") %>
+      </section>
+    </div>
+  </fieldset>
+
   <fieldset>
     <div class="row">
       <section class="col col-6">

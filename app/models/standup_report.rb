@@ -4,11 +4,14 @@ class StandupReport < ActiveRecord::Base
 
   validates :task_name, :presence => true
 
-  def self.get_report(current_user, date)
-    conditions = ["creator_id = ?", current_user.id]
+  def self.get_report(user_id, date, test=false)
+    conditions = ["creator_id = ?", user_id]
     conditions[0] += " AND date(created_at) = '#{date}'"
-    # binding.pry
-    StandupReport.where(conditions) #.load
+    if test # Just check if atleast 1 task added
+      StandupReport.where(conditions).limit(1)
+    else
+      StandupReport.where(conditions)
+    end
   end
 
   def self.create_standup_report(params, current_user)

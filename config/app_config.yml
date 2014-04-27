@@ -7,6 +7,11 @@ environment:
   local_server: true
   enable_caching: true
 
+app:
+  name: 'Enterprise Collab'
+  version: 0.0.1
+
+
 # Project Management Tool - Assembla API
 pm_config:
   tool_name: 'Assembla'

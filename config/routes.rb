@@ -23,6 +23,7 @@
   resources :dashboard
   resources :spaces
   get "spaces/milestones/:id/:filter" => "spaces#milestones"
+  get "spaces/team/:id" => "spaces#team"
 
   resources :groups
   resources :standup_reports

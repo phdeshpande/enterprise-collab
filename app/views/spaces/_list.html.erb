@@ -1,9 +1,11 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Created at</th>
-      <th>Status</th>
+      <th class="col-sm-3">Name</th>
+      <th class="col-sm-1">Status</th>
+      <th class="col-sm-1">Created at</th>
+      <th class="col-sm-5">Description</th>
+      <th class="col-sm-2"></th>
     </tr>
   </thead>
   <tbody>
@@ -15,9 +17,11 @@
   <% else %>
     <% spaces.each do |s| %>
       <tr>
-        <td><%= link_to s['name'], :controller => "spaces", :action => "milestones", :id => s["id"], :filter => "all" %></td>
-        <td><%= CommonUtils.date_format(s['created_at'], "date") %></td>
+        <td><%= s['name'] %></td>
         <td><%= SettingsConfig::STATUS[s['status']] %></td>
+        <td><%= CommonUtils.date_format(s['created_at'], "date") %></td>
+        <td><%= s['description'] %></td>
+        <td class="text-center"><small><%= link_to 'Team', :controller => "spaces", :action => "team", :id => s["id"]%> <span class='text-muted'>|</span> <%= link_to 'Milestones', :controller => "spaces", :action => "milestones", :id => s["id"], :filter => "all" %></small></td>
       </tr>
       <% active_spaces = (active_spaces + 1) if enabled?(s['status']) %>
       <% end %>

@@ -25,6 +25,11 @@ class User < ActiveRecord::Base
     user
   end
 
+  # Get User
+  def self.getPMUser(pm_user_id_key)
+    User.where(:pm_user_id_key => pm_user_id_key).load.first
+  end
+
   # Get all users under current account_id
   def self.get_all(account_id)
     User.where(:account_id => account_id)

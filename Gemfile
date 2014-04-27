@@ -25,6 +25,7 @@ gem 'execjs'
 gem 'therubyracer'
 
 gem 'devise'
+gem 'cancan'
 gem 'httparty'
 gem 'userstamp', :git => 'git://github.com/kimkong/userstamp.git'
 

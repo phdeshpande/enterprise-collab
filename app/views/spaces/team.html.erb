@@ -1,0 +1,31 @@
+<% content_for :quick_snap do %>
+ <%= render :partial => "quick_snap", :locals => { :label => "Team", :stat_count => @team.size } %>
+<% end %>
+
+<div class="row">
+  <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sortable-grid ui-sortable">
+    <div id="wid-id-0" class="jarviswidget jarviswidget-color-darken jarviswidget-sortable">
+      <header role="heading">
+        <%= render :partial => "common/admin/widget_title", :locals => {:title => "Team for #{@space['name']}"} %>
+      </header>
+      <div role="content">
+
+          <!-- widget edit box -->
+          <div class="jarviswidget-editbox">
+            <!-- This area used as dropdown edit box -->
+
+          </div>
+          <!-- end widget edit box -->
+
+          <!-- widget content -->
+          <div class="widget-body">
+            <%= render :partial => "team_list", :locals => { :space => @space, :team => @team }  %>
+          </div>
+          <!-- end widget content -->
+
+        </div>
+
+    </div>
+  </article>
+
+</div>

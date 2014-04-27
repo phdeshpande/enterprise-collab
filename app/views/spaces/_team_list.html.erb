@@ -1,0 +1,52 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th class="col-sm-3">Name</th>
+      <th class="col-sm-3">Email ID</th>
+      <th class="col-sm-1 text-center">Role</th>
+      <th class="col-sm-2">Member since</th>
+      <th class="col-sm-2 text-center">StandUp Report?</th>
+      <th class="col-sm-1">Status</th>
+    </tr>
+  </thead>
+  <tbody> 
+  <% if team.blank? %>
+    <tr>
+      <td colspan="5" class="text-center text-muted">NOTHING FOUND!</td>
+    </tr>
+  <% else %>
+    <% team.each do |r| %>
+      <tr>
+        <td><%= r['user']['name'] %></td>
+        <td><%= r['user']['email'] %></td>
+        <td class="text-center">
+          <% owner_css_class = (r['role'] == 'owner') ? 'class=text-success' : '' %>
+          <span <%= owner_css_class %>><%= r['role'].camelize %></span>
+        </td>
+        <td><%= CommonUtils.date_format(r['agreed_time']) %></td>
+        <td class="text-center">
+          <% if r['standup_status'].blank? %>
+            <span class='text-danger'>No</span>
+          <% elsif r['standup_status'] == 0 %>
+            <span class='label label-danger'>Not Linked</span>
+            <%= "<div class='text-warning'><small>#{r['user_id']}</small></div>".html_safe if is_admin? %>
+          <% elsif !r['standup_status'].blank? %>
+            <span class='text-success'>YES</span>
+          <% end %>
+          <%#= (r['standup_status'].blank? || r['standup_status'] == 0)  ? "<span class='text-danger'>No Report Added</span>".html_safe : "<span class='text-success'>See Report</span>".html_safe %></td>
+        <td><code><%= SettingsConfig::PM_USER_STATUS[r['status']]  %></code></td>
+      </tr>
+      <%#= team_size = team_size + 1 %>
+      <% end %>
+  <% end %>
+  </tbody>
+</table>
+
+<% stat_count = team.size.blank? ? 0 : team.size %>  
+
+<script type="text/javascript">
+// Update Active Statistics Count
+  $(document).ready( function () {
+    init(<%= stat_count %>);
+  });
+</script>

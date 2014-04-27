@@ -14,6 +14,7 @@ class GroupsController < ApplicationController
 
   # Create Group
   def create
+    # binding.pry
     @group = Group.create_group(group_params, current_user.account_id)
     begin
       @group.save!
@@ -34,7 +35,9 @@ class GroupsController < ApplicationController
   # Update Group
   def update
     @group = Group.where(:id => params[:id]).first
+    binding.pry
     begin
+      params['group']['member_ids'] = Group.array_to_csv(params['group']['member_ids'].values)
       @group.update_attributes!(group_params) 
       @groups = Group.get_all(current_user.account_id)
       flash[:succes] = "Group details updated successfully!"
@@ -65,7 +68,7 @@ class GroupsController < ApplicationController
 
   # Permit parameters
   def group_params
-    params.require(:group).permit(:name, :description, :status, :user_id)
+    params.require(:group).permit(:name, :description, :status, :user_id, :member_ids)
   end
 
 end

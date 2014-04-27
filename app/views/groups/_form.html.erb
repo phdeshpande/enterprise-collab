@@ -1,3 +1,7 @@
+<script type="text/javascript">
+    
+</script>
+
 <%= form_for(@group, :html => {:class => "smart-form"}, :remote => true) do |f| %>
   <fieldset>
     <section>
@@ -21,6 +25,32 @@
           <%= wrap_input_field("#{f.select :user_id, options_for_user_select(users), :class => 'select' }", "") %>
           <i></i>
       </label>
+    </section>
+  </fieldset>
+ 
+  <fieldset>
+    <section>
+      <label class="label"><strong>Group Members</strong></label>
+      <div class="row">
+        <% 
+          member_ids = []
+          member_ids.push(@group.user_id.to_s) if (@group.member_ids.blank? ||  !@group.member_ids.include?(@group.user_id.to_s) ) # Group Owner is by default group member
+          member_ids.push(@group.member_ids.split(',')) unless @group.member_ids.blank?
+         %>
+        <% users.each do |u| %>
+        <div class="col col-3">
+          <label class="checkbox">
+            <% checked = member_ids.include?(u.id.to_s) ? "checked='checked'" : "" %>
+            <input type="checkbox" <%= checked %> name="group[member_ids][<%= users.index(u) %>]" value="<%= u.id %>">
+            <i></i><%= u.name %>
+          </label>
+        </div>
+        <% end %>
+      </div>
+      <!-- <label class="select select-multiple">
+          <%#= wrap_input_field("#{f.select :member_ids, options_for_user_select(users),{},{multiple: true, include_blank: true, :class => 'custom-scroll'} }", "") %>
+          <i></i>
+      </label> -->
     </section>
 
   </fieldset>

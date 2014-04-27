@@ -12,10 +12,19 @@ class Group < ActiveRecord::Base
   end
 
   def self.create_group(params, account_id)
+    member_ids = params[:member_ids].collect{|m| m.join(',')}
     group = Group.new(params)
     group.account_id = account_id
     group.status = true
     group
+  end
+
+  # Convert array to CSV
+  # @param Array [1,2,3]
+  # @returns String "1,2,3"
+  def self.array_to_csv(arr)
+    arr.delete("")
+    arr.join(",")
   end
 
 end

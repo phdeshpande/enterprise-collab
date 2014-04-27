@@ -10,14 +10,14 @@ module ApiTalk
     request_data  = {}
     begin
       #TODO Uncomment these lines before DEMO
-    # request_data  = HTTParty.get(uri, :headers => { 'Content-Type' => 'application/json', 'Accept' => 'application/json', 
-    #               "X-Api-Key" => AppConfig::pm_config['api_key'], "X-Api-Secret" => AppConfig::pm_config['api_secret_key']} )
+    request_data  = HTTParty.get(uri, :headers => { 'Content-Type' => 'application/json', 'Accept' => 'application/json', 
+                  "X-Api-Key" => AppConfig::pm_config['api_key'], "X-Api-Secret" => AppConfig::pm_config['api_secret_key']} )
     rescue
-      # if request_data.response.code != "200"
-      #   # flash[:alert] = request_data.response.code + " - " + request_data.response.message
-      #   raise "Something went wrong"
-      #   Rails.logger("API call failed to #{uri}. Response returned is #{request_data.response.code} - request_data.response.message")
-      # end
+      if request_data.response.code != "200"
+        # flash[:alert] = request_data.response.code + " - " + request_data.response.message
+        raise "Something went wrong"
+        Rails.logger("API call failed to #{uri}. Response returned is #{request_data.response.code} - request_data.response.message")
+      end
 
     end
     request_data
@@ -29,15 +29,40 @@ module ApiTalk
   class Space
   
     # Get all spaces using configure PM Tool and API configs
+    def self.getSpace(space_id, api='spaces')
+      ApiTalk::callAPI(api+'/'+space_id)
+    end
+
+    # Get all spaces using configure PM Tool and API configs
     def self.getSpaces(api='spaces')
+      ApiTalk::callAPI(api)
+    end
+
+    # Get Space members for space
+    # @param space_id
+    def self.getMembers(space_id, api='spaces')
+      api += "/#{space_id}/user_roles"
+      # binding.pry
       ApiTalk::callAPI(api)
     end
 
   end 
 
-  # class Milestones < Spaces
+  class User
+    # Get user name by ID
+    def self.getName(id, api = 'users')
+      ApiTalk::callAPI("#{api}/#{id}")
+    end
 
-  # end
+  end
+
+  class Stream
+    # Get activity stream
+    def self.getActivity(api='activity')
+      ApiTalk::callAPI(api)
+    end
+
+  end
 
 
 

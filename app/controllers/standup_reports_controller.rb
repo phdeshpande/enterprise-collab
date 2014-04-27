@@ -3,8 +3,8 @@ class StandupReportsController < ApplicationController
 
   # List Standup Report for the logged-in user
   def index
-    @standup_tasks = StandupReport.get_report(current_user, Date.today) # Get today's standup Report
-    @last_eod_report = StandupReport.get_report(current_user, Date.yesterday) # Get yday's standup Report
+    @standup_tasks = StandupReport.get_report(current_user.id, Date.today) # Get today's standup Report
+    @last_eod_report = StandupReport.get_report(current_user.id, Date.yesterday) # Get yday's standup Report
     # binding.pry
   end
 
