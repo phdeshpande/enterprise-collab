@@ -18,4 +18,11 @@ class DashboardController < ApplicationController
     @stream = ApiTalk::Stream.getActivity
   end
 
+  def show
+  end
+  
+  # List all Cron tasks
+  def cron_tasks
+  end
+
 end

@@ -34,14 +34,15 @@
       <div class="row">
         <% 
           member_ids = []
-          member_ids.push(@group.user_id.to_s) if (@group.member_ids.blank? ||  !@group.member_ids.include?(@group.user_id.to_s) ) # Group Owner is by default group member
-          member_ids.push(@group.member_ids.split(',')) unless @group.member_ids.blank?
+          group_member_ids = @group.member_ids.tr("\"---\n-", '').split(' ')
+          member_ids.push(@group.user_id.to_s) if (@group.member_ids.blank? ||  !group_member_ids.include?(@group.user_id.to_s) ) # Group Owner is by default group member
+          member_ids = member_ids | group_member_ids
          %>
         <% users.each do |u| %>
         <div class="col col-3">
           <label class="checkbox">
             <% checked = member_ids.include?(u.id.to_s) ? "checked='checked'" : "" %>
-            <input type="checkbox" <%= checked %> name="group[member_ids][<%= users.index(u) %>]" value="<%= u.id %>">
+            <input type="checkbox" <%= checked %> name="group[member_ids][]" value="<%= u.id %>">
             <i></i><%= u.name %>
           </label>
         </div>

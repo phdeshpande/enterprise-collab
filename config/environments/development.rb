@@ -14,7 +14,7 @@ EnterpriseCollab::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -28,6 +28,17 @@ EnterpriseCollab::Application.configure do
   config.assets.debug = true
 
   # Default URL for action mailer
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-  
+  config.action_mailer.default_url_options = { :host => 'http://www.enterprise-collab.com'} # Set this to actual DOMAIN
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'gmail.com',
+    user_name:            'purushottam@hutgeeks.com', # Your email ID
+    password:             '', # Password
+    authentication:       'login',
+    enable_starttls_auto: true  
+  }
 end

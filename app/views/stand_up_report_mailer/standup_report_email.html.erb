@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+  <div bgcolor="#FFFFFF" style="width:100%!important;background-color:#ffffff;margin:0;padding:0" marginheight="0" marginwidth="0">
+    <p>Dear Team,</p>
+    <center>    
+    <p style="margin:0;padding-bottom:10px;font-size:16px;color:#505050">
+      <%= @space["name"] %> StandUp Report for <strong><%= @date %></strong>.
+    </p>
+    <div style="margin: 20px 0;">
+      <table width="100%" height="100%" cellspacing="0" cellpadding="5" bgcolor="#FFFFFF" border="1" style="border: 1px solid #BBBBBB; height:100% !important;width:100% !important;background-color:#ffffff;margin:0;padding:0;border-collapse: collapse;">
+        <tr style="background: #DDDDDD;">
+          <th>Task</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Comments</th>
+        </tr>
+        <% no_standup = [] %>
+        <% @standup_tasks.each do |user_name, standup_tasks| %>
+          <tr>
+            <td colspan="4" style="background: #FFFCCC;"><strong><%= user_name %></strong></td>
+          </tr>
+            <% standup_tasks.each do |task| %>
+              <% if standup_tasks.size == 0 %>
+                <tr><td colspan="4">No StandUp Report Added</td></tr>
+                <% no_standup.push(user_name) %>
+              <% else %>
+              <tr>
+                <td><%= task.task_name %></td>
+                <td><%= task.description %></td>
+                <td><%= display_task_status(task.status, {inline_style: true}) %></td>
+                <td><%= task.comments %></td>
+              </tr>
+            <% end %>
+          <% end %>
+        <% end %>
+      </table>
+
+      <% if no_standup.size > 0 %>
+      <ol>
+        <% no_standup.each do |user_name| %>
+        <li><%= user_name %></li>
+      </ol>
+      <% end %>
+
+    </div>
+    <div align="center" style="color:#707070;font-family:Arial;font-size:12px;line-height:125%;text-align:center">
+      &copy; 2014 <a target="_blank" style="color:#336699;font-weight:normal;text-decoration:underline" href="https://www.enterprise-collab.com">Enterprise Collab</a> - Thanks for joining and have a great day!
+    </div>
+
+    </div>
+  </body>
+</html>

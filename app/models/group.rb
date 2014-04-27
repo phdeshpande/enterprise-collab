@@ -12,7 +12,7 @@ class Group < ActiveRecord::Base
   end
 
   def self.create_group(params, account_id)
-    member_ids = params[:member_ids].collect{|m| m.join(',')}
+    member_ids = params[:member_ids].join(',')
     group = Group.new(params)
     group.account_id = account_id
     group.status = true

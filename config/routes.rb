@@ -10,9 +10,9 @@
     # post "/users/update" => "users#update"
   end
 
+  get "accounts/cron_tasks" => "accounts#cron_tasks"
   resources :accounts
   # get "/accounts/edit/:id" => "accounts#cron_tasks"
-  # get "/accounts/cron_tasks" => "accounts#cron_tasks"
 
   # resources :users do
   #   member do
@@ -21,11 +21,14 @@
   # end
 
   resources :dashboard
+
   resources :spaces
   get "spaces/milestones/:id/:filter" => "spaces#milestones"
   get "spaces/team/:id" => "spaces#team"
 
   resources :groups
+
+  get "standup_reports/daily_email" => "standup_reports#daily_email"
   resources :standup_reports
 
   # get "/register" => 'home#register'

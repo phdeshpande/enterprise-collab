@@ -17,7 +17,7 @@
           <div id="widget-content" class="widget-body">
             <div>If Cron is not running run these tasks manually based on their frequency.</div>
             <ul class="list-group">
-              <li class="list-group-item"><%= link_to '<i class="fa fa-lg fa-fw fa-cog"></i>  <span class="menu-item-parent">Send-out StandUp Reports</span>'.html_safe, "#"  %></li>
+              <li class="list-group-item"><%= link_to '<i class="fa fa-lg fa-fw fa-cog"></i>  <span class="menu-item-parent">Send-out StandUp Reports</span>'.html_safe, {controller: "standup_reports", action: "daily_email"}, "data-remote" => true  %><span id="daily_email"></span></li>
             </ul>
 
           </div> <!-- ENDs widget-content -->

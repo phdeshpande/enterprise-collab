@@ -28,6 +28,11 @@ gem 'devise'
 gem 'cancan'
 gem 'httparty'
 gem 'userstamp', :git => 'git://github.com/kimkong/userstamp.git'
+gem 'delayed_job' # http://blog.andolasoft.com/2013/04/4-simple-steps-to-implement-delayed-job-in-rails.html
+gem 'delayed_job_active_record'
+gem 'daemons'
+gem 'daemon-spawn'
+# gem 'psych'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

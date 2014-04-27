@@ -12,9 +12,4 @@ class AccountsController < ApplicationController
     
   end
 
-  # List all Cron tasks
-  def cron_tasks
-    
-  end
-
 end

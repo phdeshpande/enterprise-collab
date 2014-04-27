@@ -16,12 +16,12 @@ class GroupsController < ApplicationController
   def create
     # binding.pry
     @group = Group.create_group(group_params, current_user.account_id)
+    @users = User.get_all(current_user.account_id)
     begin
       @group.save!
       flash[:success] = "Group was created successfully!"
       @groups = Group.get_all(current_user.account_id)
     rescue
-      @users = User.get_all(current_user.account_id)
       flash[:alert] = "Group creation failed!"
     end
   end
@@ -35,14 +35,14 @@ class GroupsController < ApplicationController
   # Update Group
   def update
     @group = Group.where(:id => params[:id]).first
-    binding.pry
+    # binding.pry
+    @users = User.get_all(current_user.account_id)
     begin
-      params['group']['member_ids'] = Group.array_to_csv(params['group']['member_ids'].values)
+      # params['group']['member_ids'] = Group.array_to_csv(params['group']['member_ids'])
       @group.update_attributes!(group_params) 
       @groups = Group.get_all(current_user.account_id)
       flash[:succes] = "Group details updated successfully!"
     rescue => e
-      @users = User.get_all(current_user.account_id)
       flash[:alert] = "There was a problem updating the group details"
     end
   end
@@ -68,7 +68,7 @@ class GroupsController < ApplicationController
 
   # Permit parameters
   def group_params
-    params.require(:group).permit(:name, :description, :status, :user_id, :member_ids)
+    params.require(:group).permit(:name, :description, :status, :user_id, :member_ids => [])
   end
 
 end

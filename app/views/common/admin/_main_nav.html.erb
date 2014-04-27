@@ -54,7 +54,7 @@
       <li>
         <%= link_to '<i class="fa fa-lg fa-fw fa-windows"></i>  <span class="menu-item-parent">Utilities</span>'.html_safe, "#"  %>
         <ul>
-          <li><%= link_to '<i class="fa fa-lg fa-fw fa-cog"></i> Cron Tasks'.html_safe, "/accounts/cron_tasks"  %></li>
+          <li><%= link_to '<i class="fa fa-lg fa-fw fa-cog"></i> Cron Tasks'.html_safe, controller: "accounts", action: "cron_tasks"  %></li>
         </ul>
       </li>
     </ul>

@@ -3,9 +3,18 @@ class StandupReportsController < ApplicationController
 
   # List Standup Report for the logged-in user
   def index
-    @standup_tasks = StandupReport.get_report(current_user.id, Date.today) # Get today's standup Report
+    standup = StandupReport.get_report(current_user.id, Date.today) # Get today's standup Report
+    @standup_tasks = {}
+    spaces = {}
+      standup.each do |su_report|
+        # Get space name
+        spaces[su_report.space_id] = ApiTalk::Space.getSpace(su_report.space_id) unless spaces.keys.include?(su_report.space_id) # Call only if space details were not fetched for this space_id
+        space_name = spaces[su_report.space_id]['name']
+        # binding.pry
+        @standup_tasks[space_name] = [su_report] if @standup_tasks[space_name].blank?
+        @standup_tasks[space_name].push(su_report)
+      end
     @last_eod_report = StandupReport.get_report(current_user.id, Date.yesterday) # Get yday's standup Report
-    # binding.pry
   end
 
   # New Standup Report Task
@@ -71,6 +80,33 @@ class StandupReportsController < ApplicationController
     end
   end
 
+  def daily_email
+    spaces = ApiTalk::Space.getSpaces
+    spaces.each do |s|
+    # For each space get Standup Report for all users
+    standup_reports = StandupReport.get_by_space(s["id"], Date.today)
+    standup_tasks = {}
+    standup_reports.each do |su_report|
+      user_name = su_report.user.first_name
+      standup_tasks[user_name] = [] if standup_tasks[user_name].blank?
+      standup_tasks[user_name].push(su_report)
+    end
+
+    # binding.pry
+      team_members = {}
+      # Send email to the team members
+      team = ApiTalk::Space.getMembers(s["id"])
+      # binding.pry
+      team.each do |t|
+        user = ApiTalk::User.getName(t['user_id']) # Get user details by user ID from PM Tool
+        # user = User.getPMUser(t['user_id'])
+        team_members = { user['name'] => user['email'] }
+        # binding.pry
+      end
+      StandUpReportMailer.standup_report_email(s, team_members, standup_tasks).deliver # Trigger email for each space
+    end
+  end
+ 
   ###############################################################################################################
   private
   ###############################################################################################################
