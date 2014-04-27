@@ -48,6 +48,9 @@ module ApiTalk
 
   end 
 
+  #######################################################################
+  # All Methods for User
+  #######################################################################
   class User
     # Get user name by ID
     def self.getName(id, api = 'users')
@@ -56,6 +59,9 @@ module ApiTalk
 
   end
 
+  #######################################################################
+  # All Methods for Stream
+  #######################################################################
   class Stream
     # Get activity stream
     def self.getActivity(api='activity')

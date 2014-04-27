@@ -35,7 +35,7 @@ class GroupsController < ApplicationController
   # Update Group
   def update
     @group = Group.where(:id => params[:id]).first
-    binding.pry
+    # binding.pry
     begin
       params['group']['member_ids'] = Group.array_to_csv(params['group']['member_ids'].values)
       @group.update_attributes!(group_params) 
