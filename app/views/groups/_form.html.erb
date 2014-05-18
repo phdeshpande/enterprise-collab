@@ -34,9 +34,11 @@
       <div class="row">
         <% 
           member_ids = []
-          group_member_ids = @group.member_ids.tr("\"---\n-", '').split(' ')
-          member_ids.push(@group.user_id.to_s) if (@group.member_ids.blank? ||  !group_member_ids.include?(@group.user_id.to_s) ) # Group Owner is by default group member
-          member_ids = member_ids | group_member_ids
+          unless @group.member_ids.blank?
+            group_member_ids = @group.member_ids.tr("\"---\n-", '').split(' ') 
+            member_ids.push(@group.user_id.to_s) if (@group.member_ids.blank? ||  !group_member_ids.include?(@group.user_id.to_s) ) # Group Owner is by default group member
+            member_ids = member_ids | group_member_ids
+          end
          %>
         <% users.each do |u| %>
         <div class="col col-3">

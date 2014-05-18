@@ -4,16 +4,7 @@ class StandupReportsController < ApplicationController
   # List Standup Report for the logged-in user
   def index
     standup = StandupReport.get_report(current_user.id, Date.today) # Get today's standup Report
-    @standup_tasks = {}
-    spaces = {}
-      standup.each do |su_report|
-        # Get space name
-        spaces[su_report.space_id] = ApiTalk::Space.getSpace(su_report.space_id) unless spaces.keys.include?(su_report.space_id) # Call only if space details were not fetched for this space_id
-        space_name = spaces[su_report.space_id]['name']
-        # binding.pry
-        @standup_tasks[space_name] = [su_report] if @standup_tasks[space_name].blank?
-        @standup_tasks[space_name].push(su_report)
-      end
+    @standup_tasks = build_standup_report_hash(standup)
     @last_eod_report = StandupReport.get_report(current_user.id, Date.yesterday) # Get yday's standup Report
   end
 
@@ -31,7 +22,7 @@ class StandupReportsController < ApplicationController
     begin
       standup.save!
       flash[:success] = "Task was added successfully!"
-      @standup_tasks = StandupReport.get_report(current_user, Date.today) # Get today's standup Report
+      @standup_tasks = build_standup_report_hash(standup)
       # @standup = Standup.new # Needed for form in Modal 
       # binding.pry
     rescue
@@ -54,7 +45,8 @@ class StandupReportsController < ApplicationController
     standup = StandupReport.find(params[:id])
     begin
     standup.update_attributes(standup_report_params)
-    @standup_tasks = StandupReport.get_report(current_user, Date.today) # Get today's standup Report
+    standup = StandupReport.get_report(current_user, Date.today) # Get today's standup Report
+    @standup_tasks = build_standup_report_hash(standup)
     flash[:success] = "Task was updated successfully!"
     rescue => e
       @standup = StandupReport.find(params[:id])
@@ -73,7 +65,8 @@ class StandupReportsController < ApplicationController
     @spaces = ApiTalk::Space.getSpaces
     begin
       standup = StandupReport.destroy(params[:id])
-      @standup_tasks = StandupReport.get_report(current_user, Date.today) # Get today's standup Report
+      standup = StandupReport.get_report(current_user, Date.today) # Get today's standup Report
+      @standup_tasks = build_standup_report_hash(standup)
       flash[:success] = "Task was deleted successfully!"
     rescue
       flash[:alert] = "There was a problem deleting the task"
@@ -114,6 +107,24 @@ class StandupReportsController < ApplicationController
   # Permit parameters
   def standup_report_params
     params.require(:standup_report).permit(:task_name, :description, :status, :priority, :eta, :actual_time, :comments, :category_id, :space_id, :creator_id)
+  end
+
+  # Build Standup Report Hash for Listing
+  # @param standup_report_ar
+  # @return Hash (standup tasks with space name)
+  def build_standup_report_hash(standup)
+    standup = StandupReport.get_report(current_user, Date.today) # Get today's standup Report
+      standup_tasks = {}
+      spaces = {}
+      standup.each do |su_report|
+        # Get space name
+        spaces[su_report.space_id] = ApiTalk::Space.getSpace(su_report.space_id) unless spaces.keys.include?(su_report.space_id) # Call only if space details were not fetched for this space_id
+        space_name = spaces[su_report.space_id]['name']
+        # binding.pry
+        standup_tasks[space_name] = [su_report] if standup_tasks[space_name].blank?
+        standup_tasks[space_name].push(su_report)
+      end
+    standup_tasks
   end
 
 
