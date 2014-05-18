@@ -121,8 +121,12 @@ class StandupReportsController < ApplicationController
         spaces[su_report.space_id] = ApiTalk::Space.getSpace(su_report.space_id) unless spaces.keys.include?(su_report.space_id) # Call only if space details were not fetched for this space_id
         space_name = spaces[su_report.space_id]['name']
         # binding.pry
-        standup_tasks[space_name] = [su_report] if standup_tasks[space_name].blank?
-        standup_tasks[space_name].push(su_report)
+        if standup_tasks[space_name].blank?
+          standup_tasks[space_name] = [su_report] 
+        else
+          standup_tasks[space_name].push(su_report)
+        end
+        # binding.pry
       end
     standup_tasks
   end
