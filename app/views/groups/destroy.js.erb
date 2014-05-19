@@ -1,0 +1,2 @@
+$('#flash-messages').html("<%= escape_javascript(render 'common/flash_messages') %>");
+$('#widget-content').html("<%= escape_javascript(render 'groups/index',:groups => @groups) %>")
